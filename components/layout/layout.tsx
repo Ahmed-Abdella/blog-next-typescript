@@ -6,7 +6,7 @@ function Layout({ children }: { children: React.ReactNode }) {
   return (
     <Fragment>
       <NavBar></NavBar>
-      <main>{children}</main>
+      <main className="mt-28 mb-4 mx-40">{children}</main>
     </Fragment>
   );
 }

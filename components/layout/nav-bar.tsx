@@ -16,7 +16,10 @@ function NavBar() {
   // className={`text-red  ${`/${segment}` === "/" ? "bg-red" : "bg-blue"}`} FOR REVISION
 
   return (
-    <header className="text-gray-600 font-semibold flex items-center  px-20 py-2 border border-gray-100  text-base ">
+    <header
+      id="nav-bar"
+      className="blury fixed top-0 right-0 left-0  text-gray-600 font-semibold shadow flex items-center px-20 py-4 border border-gray-100 text-base"
+    >
       <Link href="/">
         <Image
           src={"/logo2.svg"}
@@ -26,15 +29,15 @@ function NavBar() {
         ></Image>
       </Link>
 
-      <form className=" flex text-base font-normal shadow  ml-20 py-1 px-4 border-gray-400 border rounded-md">
+      <form className=" bg-gray-100 flex text-base font-normal shadow  ml-20 py-1 px-4 border-gray-400 border rounded-md">
         <div>
           <label htmlFor="search"></label>
 
           <input
             id="search"
             type="text"
-            className=" w-80 outline-none"
-            placeholder="search in articles"
+            className="bg-gray-100  w-80 outline-none"
+            placeholder="search..."
           />
         </div>
 
