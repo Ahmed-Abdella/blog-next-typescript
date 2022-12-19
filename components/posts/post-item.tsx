@@ -15,7 +15,7 @@ export default function PostItem({ post }: { post: postType }) {
   };
   return (
     <Link
-      className="flex flex-col shadow-2xl hover:scale-105 transition duration-300 bg-gray-100 rounded-3xl"
+      className="flex flex-col shadow-2xl hover:scale-105 focus:scale-105 transition duration-300 bg-gray-100 rounded-3xl"
       href={`/blogs/${post.id}`}
     >
       <div className="z-0 relative h-52  width-full ">
@@ -27,13 +27,15 @@ export default function PostItem({ post }: { post: postType }) {
           fill
         ></Image>
       </div>
-      <h1 className="mt-4 text-gray-900 text-2xl px-8">{post.title}</h1>
+      <h3 className="font-bold mt-4 text-gray-900 text-2xl px-8">
+        {post.title}
+      </h3>
 
-      <p className="mt-4 text-gray-500 text-s px-4 ">{post.description}</p>
+      <p className="mt-4 text-gray-500 text-base px-4 ">{post.description}</p>
 
       <div className="mb-4 pt-6 mt-auto">
         <p className="text-xs text-gray-500  self-end px-4">
-          created by{" "}
+          written by
           <span className="block text-sm text-gray-900">{post.author}</span>
         </p>
       </div>

@@ -18,7 +18,7 @@ function NavBar() {
   return (
     <header
       id="nav-bar"
-      className="blury fixed top-0 right-0 left-0  text-gray-600 font-semibold shadow flex items-center px-20 py-4 border border-gray-100 text-base"
+      className="max-h-16 blury fixed top-0 right-0 left-0  text-gray-600 font-semibold shadow flex items-center px-20 py-4 border border-gray-100 text-base"
     >
       <Link href="/">
         <Image

@@ -59,12 +59,16 @@ const featuredPosts = [
 ];
 
 function FeaturedPosts() {
+  console.log("run in the browser");
+
   return (
     <>
-      <h1 className="mb-12 text-gray-900 text-4xl underline decoration-cyan-500 decoration-4">
-        Featured Posts
-      </h1>
-      <PostsGrid posts={featuredPosts} />
+      <div className="mt-16">
+        <h2 className="mb-8 underline drop-shadow-2xl decoration-2 decoration-gray-300  underline-offset-8 text-gray-900 text-2xl ">
+          Featured Articles
+        </h2>
+        <PostsGrid posts={featuredPosts} />
+      </div>
     </>
   );
 }
