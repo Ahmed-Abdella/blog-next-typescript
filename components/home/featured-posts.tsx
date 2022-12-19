@@ -64,7 +64,7 @@ function FeaturedPosts() {
   return (
     <>
       <div className="mt-16">
-        <h2 className="mb-8 underline drop-shadow-2xl decoration-2 decoration-gray-300  underline-offset-8 text-gray-900 text-2xl ">
+        <h2 className="mb-8 underline  decoration-2 decoration-gray-300  underline-offset-8 text-gray-900 text-2xl font-semibold ">
           Featured Articles
         </h2>
         <PostsGrid posts={featuredPosts} />
