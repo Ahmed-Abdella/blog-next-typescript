@@ -5,7 +5,7 @@ import { BsLinkedin } from "react-icons/Bs";
 
 export default function Footer() {
   return (
-    <footer className="mx-20 mt-20 p-20 text-gray-500 text-sm font-semibold border-t">
+    <footer className=" mx-20 md:mx-5 mt-20 p-20 md:p-5 text-gray-500 text-sm font-semibold border-t">
       <div className="flex items-center justify-center flex-col">
         <Link href="/">
           <Image
@@ -16,7 +16,7 @@ export default function Footer() {
           ></Image>
         </Link>
 
-        <ul className="flex gap-4 mt-4 [&>*]:transition [&>*]:duration-300 hover:[&>*]:text-black">
+        <ul className="flex gap-4 mt-4  [&>*]:transition [&>*]:duration-300 hover:[&>*]:text-black">
           <li>
             <Link href="/about">About</Link>
           </li>
@@ -34,11 +34,11 @@ export default function Footer() {
               <BsTwitter />
             </a>
           </li>
-          <li>
+          {/* <li>
             <a href="#">
               <BsLinkedin />
             </a>
-          </li>
+          </li> */}
         </ul>
 
         <p className="mt-6 text-xs font-light">

@@ -18,7 +18,7 @@ function NavBar() {
   return (
     <header
       id="nav-bar"
-      className="max-h-16 blury fixed top-0 right-0 left-0  text-gray-600 font-semibold shadow flex items-center px-20 py-4 border border-gray-100 text-base"
+      className="max-h-16 blury fixed top-0 right-0 left-0  text-gray-600 font-semibold shadow flex items-center px-20 lg:px-10 py-4 border border-gray-100 text-base"
     >
       <Link href="/">
         <Image
@@ -29,7 +29,7 @@ function NavBar() {
         ></Image>
       </Link>
 
-      <form className=" bg-gray-100 flex text-base font-normal shadow  ml-20 py-1 px-4 border-gray-400 border rounded-md">
+      {/* <form className=" bg-gray-100 flex text-base font-normal shadow  ml-20 py-1 px-4 border-gray-400 border rounded-md">
         <div>
           <label htmlFor="search"></label>
 
@@ -57,10 +57,10 @@ function NavBar() {
             />
           </svg>
         </button>
-      </form>
+      </form> */}
 
       <nav className="ml-auto">
-        <ul className="[&>*]:ml-5   [&>*]:transition [&>*]:duration-500  flex items-center ">
+        <ul className="[&>*]:ml-5 [&>*]:lg:ml-2  [&>*]:transition [&>*]:duration-500  flex items-center ">
           <li>
             <NavLink href="/">Home</NavLink>
           </li>
@@ -73,19 +73,8 @@ function NavBar() {
           <li>
             <NavLink href="/contact">Contact</NavLink>
           </li>
-          <li className="border-l border-gray-600 px-6">
-            <ul className="flex hover:[&>*]:text-gray-900 hover:[&>*]:cursor-pointer [&>*]:transition [&>*]:duration-500  ">
-              <li className="mr-4">
-                <a>
-                  <BsTwitter />
-                </a>
-              </li>
-              <li>
-                <a>
-                  <BsLinkedin />
-                </a>
-              </li>
-            </ul>
+          <li className="border-l border-gray-400 pl-4 py-0.5">
+            <BsTwitter />
           </li>
         </ul>
       </nav>
