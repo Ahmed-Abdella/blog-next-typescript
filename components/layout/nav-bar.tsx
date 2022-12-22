@@ -1,35 +1,48 @@
-// "use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
-import { BsTwitter } from "react-icons/Bs";
-import { BsLinkedin } from "react-icons/Bs";
-import NavLink from "./nav-link";
-// import { useSelectedLayoutSegment } from "next/navigation";
 
-import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+
+import NavLink from "./nav-link";
+import { BsTwitter } from "react-icons/Bs";
+import { FiMenu } from "react-icons/fi";
+import { GrClose } from "react-icons/gr";
 
 function NavBar() {
-  // let segment = useSelectedLayoutSegment();
-  const router = useRouter();
+  // const breakPoint = 800;
+  // const [width, setWidth] = useState(
+  //   typeof window !== "undefined" ? window.innerWidth : 0
+  // );
 
-  // className={`text-red  ${`/${segment}` === "/" ? "bg-red" : "bg-blue"}`} FOR REVISION
+  // console.log(width);
+
+  // useEffect(() => {
+  //   window.addEventListener("resize", () => setWidth(window.innerWidth));
+  //   return window.removeEventListener("resize", () =>
+  //     setWidth(window.innerWidth)
+  //   );
+  // }, []);
+
+  const [menuIsOpen, setmenuIsOpen] = useState(false);
 
   return (
-    <header
-      id="nav-bar"
-      className="max-h-16 blury fixed top-0 right-0 left-0  text-gray-600 font-semibold shadow flex items-center px-20 lg:px-10 py-4 border border-gray-100 text-base"
-    >
-      <Link href="/">
-        <Image
-          src={"/logo2.svg"}
-          alt="the website logo"
-          width={150}
-          height={150}
-        ></Image>
-      </Link>
+    <>
+      <header
+        id="nav-bar"
+        className="blury max-h-14  fixed top-0 right-0 left-0  text-gray-600 font-semibold shadow flex items-center px-20 lg:px-10 md:px-15 sm:px-10 py-4 border border-gray-100 text-base"
+      >
+        <Link href="/">
+          <Image
+            src={"/logo2.svg"}
+            alt="the website logo"
+            width={150}
+            height={150}
+          ></Image>
+        </Link>
 
-      {/* <form className=" bg-gray-100 flex text-base font-normal shadow  ml-20 py-1 px-4 border-gray-400 border rounded-md">
+        {/* <form className=" bg-gray-100 flex text-base font-normal shadow  ml-20 py-1 px-4 border-gray-400 border rounded-md">
         <div>
           <label htmlFor="search"></label>
 
@@ -59,26 +72,67 @@ function NavBar() {
         </button>
       </form> */}
 
-      <nav className="ml-auto">
-        <ul className="[&>*]:ml-5 [&>*]:lg:ml-2  [&>*]:transition [&>*]:duration-500  flex items-center ">
-          <li>
-            <NavLink href="/">Home</NavLink>
+        <nav className={`ml-auto md:hidden`}>
+          <ul className="[&>*]:ml-5 [&>*]:lg:ml-2  [&>*]:transition [&>*]:duration-500  flex items-center ">
+            <li>
+              <NavLink href="/">Home</NavLink>
+            </li>
+            <li>
+              <NavLink href="/blogs">Blogs</NavLink>
+            </li>
+            <li>
+              <NavLink href="/about">About</NavLink>
+            </li>
+            <li>
+              <NavLink href="/contact">Contact</NavLink>
+            </li>
+            <li className="border-l border-gray-400 pl-4 py-0.5">
+              <BsTwitter />
+            </li>
+          </ul>
+        </nav>
+
+        <div
+          onClick={() => setmenuIsOpen(true)}
+          className="hidden md:block text-2xl cursor-pointer ml-auto"
+        >
+          <FiMenu />
+        </div>
+      </header>
+
+      <nav
+        id="nav-bar"
+        className={` ${
+          menuIsOpen ? "md:block" : ""
+        } hidden  fixed top-0  right-0 left-0 blury  `}
+      >
+        <ul className="font-bold   [&>*]:transition [&>*]:duration:300  [&>*]:py-1 [&>*]:mt-4  flex flex-col justify-center items-center p-10">
+          <li className="self-end">
+            <GrClose
+              className="cursor-pointer text-4xl "
+              onClick={() => {
+                setmenuIsOpen(false);
+              }}
+            />
           </li>
           <li>
-            <NavLink href="/blogs">Blogs</NavLink>
+            <Link href="/">Home</Link>
           </li>
           <li>
-            <NavLink href="/about">About</NavLink>
+            <Link href="/blogs">Blogs</Link>
           </li>
           <li>
-            <NavLink href="/contact">Contact</NavLink>
+            <Link href="/about">About</Link>
           </li>
-          <li className="border-l border-gray-400 pl-4 py-0.5">
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
+          <li>
             <BsTwitter />
           </li>
         </ul>
       </nav>
-    </header>
+    </>
   );
 }
 

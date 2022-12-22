@@ -24,10 +24,7 @@ export default function PostItem({ post }: { post: postType }) {
     return post.imageURL;
   };
   return (
-    <Link
-      className=" flex flex-col shadow-xl hover:scale-105  focus:scale-105 transition duration-300 border rounded-3xl"
-      href={`/blogs/${post.id}`}
-    >
+    <>
       <div className="relative h-52  width-full ">
         <Image
           className=" object-cover rounded-t-3xl"
@@ -47,7 +44,10 @@ export default function PostItem({ post }: { post: postType }) {
 
       <div className="mb-4 pt-6 mt-auto px-8 flex flex-wrap gap-2 ">
         {post.tags.map((tag) => (
-          <div className=" bg-gray-200 hover:bg-gray-300 transition  duration-300 text-gray-900 rounded-xl px-2 py-0.5 text-sm">
+          <div
+            key={tag}
+            className=" bg-gray-200 hover:bg-gray-300 transition  duration-300 text-gray-900 rounded-xl px-2 py-0.5 text-sm"
+          >
             {tag}
           </div>
         ))}
@@ -59,6 +59,6 @@ export default function PostItem({ post }: { post: postType }) {
           <span className=" text-sm text-gray-900">{post.author}</span>
         </p>
       </div>
-    </Link>
+    </>
   );
 }

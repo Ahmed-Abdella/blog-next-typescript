@@ -38,6 +38,11 @@ a {
   background: rgba(255, 255, 255, 0.8);
 }
 
+/* .blury-less {
+  backdrop-filter: saturate(180%) blur(5px);
+  background: rgba(255, 255, 255, 0.4);
+} */
+
 .line-3 {
   overflow: hidden;
   text-overflow: ellipsis;
