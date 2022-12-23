@@ -31,7 +31,7 @@ function NavBar() {
     <>
       <header
         id="nav-bar"
-        className="blury max-h-14  fixed top-0 right-0 left-0  text-gray-600 font-semibold shadow flex items-center px-20 lg:px-10 md:px-15 sm:px-10 py-4 border border-gray-100 text-base"
+        className="blury max-h-14  fixed top-0 right-0 left-0  text-gray-600 font-semibold  flex items-center px-20 lg:px-10 md:px-15 sm:px-10 py-4  border border-gray-100 shadow text-base"
       >
         <Link href="/">
           <Image
@@ -103,32 +103,35 @@ function NavBar() {
       <nav
         id="nav-bar"
         className={` ${
-          menuIsOpen ? "md:block" : ""
-        } hidden  fixed top-0  right-0 left-0 blury  `}
+          menuIsOpen ? "md:translate-y-0" : ""
+        } hidden-menu  fixed top-0  right-0 left-0 blury transition duration-500  `}
       >
-        <ul className="font-bold   [&>*]:transition [&>*]:duration:300  [&>*]:py-1 [&>*]:mt-4  flex flex-col justify-center items-center p-10">
+        <ul className="font-bold text-xl hover:[&>*]:[&>*]:bg-gray-200 [&>*]:[&>*]:cursor-pointer   [&>*]:[&>*]:transition [&>*]:duration:300  [&>*]:[&>*]:py-2 [&>*]:[&>*]:px-4 [&>*]:[&>*]:rounded-lg   [&>*]:mb-8  flex flex-col justify-center items-center p-10">
           <li className="self-end">
-            <GrClose
-              className="cursor-pointer text-4xl "
+            <div
               onClick={() => {
                 setmenuIsOpen(false);
               }}
-            />
+            >
+              <GrClose className="cursor-pointer text-4xl " />
+            </div>
           </li>
-          <li>
+          <li onClick={() => setmenuIsOpen(false)}>
             <Link href="/">Home</Link>
           </li>
-          <li>
+          <li onClick={() => setmenuIsOpen(false)}>
             <Link href="/blogs">Blogs</Link>
           </li>
-          <li>
+          <li onClick={() => setmenuIsOpen(false)}>
             <Link href="/about">About</Link>
           </li>
-          <li>
+          <li onClick={() => setmenuIsOpen(false)}>
             <Link href="/contact">Contact</Link>
           </li>
-          <li>
-            <BsTwitter />
+          <li onClick={() => setmenuIsOpen(false)}>
+            <div>
+              <BsTwitter />
+            </div>
           </li>
         </ul>
       </nav>

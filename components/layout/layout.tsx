@@ -6,7 +6,7 @@ import NavBar from "./nav-bar";
 import { Raleway } from "@next/font/google";
 
 const fontFamily = Raleway({
-  weight: ["500"],
+  weight: ["400"],
   subsets: ["latin"],
 });
 

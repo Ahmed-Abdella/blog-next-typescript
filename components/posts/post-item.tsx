@@ -24,7 +24,7 @@ export default function PostItem({ post }: { post: postType }) {
     return post.imageURL;
   };
   return (
-    <>
+    <div className="h-full flex flex-col shadow-xl hover:scale-105  focus:scale-105 transition duration-300 border  rounded-3xl">
       <div className="relative h-52  width-full ">
         <Image
           className=" object-cover rounded-t-3xl"
@@ -38,7 +38,7 @@ export default function PostItem({ post }: { post: postType }) {
         {post.title}
       </h3>
 
-      <p className=" mt-4 text-gray-500 text-base px-4 line-3">
+      <p className=" mt-4 text-gray-700 text-base px-4 line-3">
         {`${post.description}`}
       </p>
 
@@ -59,6 +59,6 @@ export default function PostItem({ post }: { post: postType }) {
           <span className=" text-sm text-gray-900">{post.author}</span>
         </p>
       </div>
-    </>
+    </div>
   );
 }

@@ -57,3 +57,6 @@ a {
   -o-transform-style: preserve-3d;
   -ms-transform-style: preserve-3d;
 } */
+.hidden-menu {
+  transform: translateY(-50rem);
+}

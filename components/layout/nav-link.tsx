@@ -11,7 +11,7 @@ function NavLink({ href, children }: navLinkValues) {
 
   return (
     <Link
-      className={`px-2 py-1 hover:text-gray-900 transition duration-300 rounded-md ${
+      className={`px-2 py-1 font-base hover:text-gray-900 transition duration-300 rounded-md ${
         href === router.pathname ? "text-cyan-500" : ""
       } ${href === router.pathname ? "hover:text-cyan-500" : ""}`}
       href={href}

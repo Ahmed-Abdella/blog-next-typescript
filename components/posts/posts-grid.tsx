@@ -17,11 +17,7 @@ export default function PostsGrid({ posts }: { posts: postType[] }) {
       {/* //refactor beside the post-item */}
       <div className="grid gap-x-5 gap-y-7   grid-cols-3 2xl:grid-cols-2 md:grid-cols-1  ">
         {posts.map((post) => (
-          <Link
-            key={post.id}
-            className=" flex flex-col shadow-xl hover:scale-105  focus:scale-105 transition duration-300 border rounded-3xl"
-            href={`/blogs/${post.id}`}
-          >
+          <Link className="" key={post.id} href={`/blogs/${post.id}`}>
             <PostItem post={post} />
           </Link>
         ))}

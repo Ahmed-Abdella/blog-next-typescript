@@ -17,7 +17,7 @@ export default function Home() {
 
       <div className=" flex flex-col items-center  justify-center">
         <h1 className=" text-3xl md:text-2xl text-gray-900 text-center  font-semibold">
-          We Talk About Software Development
+          We Talk About Software & Web Development
           <Image
             src={"/icon.svg"}
             alt="the logo icon"
