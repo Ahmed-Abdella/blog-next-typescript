@@ -1,16 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
+import postType from "../../interfaces/post-type";
+import { postDataType } from "../../interfaces/post-data";
 
 // import { Roboto_Mono } from "@next/font/google";
 
-interface postType {
-  id: number;
-  title: string;
-  description: string;
-  imageURL: string;
-  author: string;
-  tags: string[];
-}
+// interface postType {
+//   slug: string;
+//   id: number;
+//   title: string;
+//   description: string;
+//   imageURL: string;
+//   author: string;
+//   tags: string[];
+// }
 
 // const robotoMono = Roboto_Mono({
 //   weight: ["500"],
@@ -19,7 +22,28 @@ interface postType {
 
 // ${robotoMono.className} in the h3 tag
 
-export default function PostItem({ post }: { post: postType }) {
+// IMAGE PLACE HOLDER
+
+// const shimmer = (w: number, h: number) => `
+// <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+//   <defs>
+//     <linearGradient id="g">
+//       <stop stop-color="#333" offset="20%" />
+//       <stop stop-color="#222" offset="50%" />
+//       <stop stop-color="#333" offset="70%" />
+//     </linearGradient>
+//   </defs>
+//   <rect width="${w}" height="${h}" fill="#333" />
+//   <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+//   <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+// </svg>`;
+
+// const toBase64 = (str: string) =>
+//   typeof window === "undefined"
+//     ? Buffer.from(str).toString("base64")
+//     : window.btoa(str);
+
+export default function PostItem({ post }: { post: postDataType }) {
   const myLoader = (): string => {
     return post.imageURL;
   };
@@ -39,9 +63,8 @@ export default function PostItem({ post }: { post: postType }) {
       </h3>
 
       <p className=" mt-4 text-gray-700 text-base px-4 line-3">
-        {`${post.description}`}
+        {`${post.excerpt}`}
       </p>
-
       <div className="mb-4 pt-6 mt-auto px-8 flex flex-wrap gap-2 ">
         {post.tags.map((tag) => (
           <div

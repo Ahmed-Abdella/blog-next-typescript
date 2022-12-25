@@ -3,7 +3,15 @@ import Image from "next/image";
 // import Image from "next/image";
 import FeaturedPosts from "../components/home/featured-posts";
 
-export default function Home() {
+import { getAllPosts, getFeaturedPosts } from "../lib/posts-utils";
+
+import { postDataType } from "../interfaces/post-data";
+
+import { useState } from "react";
+
+function Home({ posts }: { posts: postDataType[] }) {
+  const [border, setBorder] = useState(false);
+
   return (
     <div>
       <Head>
@@ -16,7 +24,7 @@ export default function Home() {
       </Head>
 
       <div className=" flex flex-col items-center  justify-center">
-        <h1 className=" text-3xl md:text-2xl text-gray-900 text-center  font-semibold">
+        <h1 className=" text-3xl md:text-2xl text-black text-center  font-semibold">
           We Talk About Software & Web Development
           <Image
             src={"/icon.svg"}
@@ -27,15 +35,21 @@ export default function Home() {
           ></Image>
         </h1>
 
-        <form className="  flex text-base font-normal shadow  mt-6 py-1 px-4 mx-5 border-gray-200 border-2 rounded-md ">
+        <form
+          className={`  flex text-base font-normal  mt-6 py-1 px-4 mx-5 border-gray-400  rounded-md hover:bg-gray-100   transition duration-300 ${
+            border ? "border-black border" : "border"
+          } `}
+        >
           <div>
             <label htmlFor="search"></label>
 
             <input
               id="search"
               type="text"
-              className="w-80 xs:w-48 outline-none"
+              className="w-80 xs:w-48 outline-none bg-inherit "
               placeholder="search..."
+              onFocus={() => setBorder(true)}
+              onBlur={() => setBorder(false)}
             />
           </div>
 
@@ -58,7 +72,19 @@ export default function Home() {
         </form>
       </div>
 
-      <FeaturedPosts></FeaturedPosts>
+      <FeaturedPosts posts={posts}></FeaturedPosts>
     </div>
   );
 }
+
+export function getStaticProps() {
+  const allPosts = getFeaturedPosts();
+
+  return {
+    props: {
+      posts: allPosts,
+    },
+  };
+}
+
+export default Home;
