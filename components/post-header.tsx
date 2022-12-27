@@ -10,7 +10,7 @@ export function PostHeader({ post }: { post: postDataType }) {
   };
 
   return (
-    <div className=" flex flex-col gap-5 items-start">
+    <div className=" flex flex-col gap-5 items-start border-b">
       <h1 className="text-4xl font-semibold text-black">{post.title}</h1>
       <div className="relative h-96 w-full   ">
         <Image
@@ -22,7 +22,7 @@ export function PostHeader({ post }: { post: postDataType }) {
           unoptimized={true}
         />
       </div>
-      <p className="text-gray-600">{post.excerpt}</p>
+      <p className="text-gray-900">{post.excerpt}</p>
 
       <div className="mb-4   px-8 flex flex-wrap gap-2 ">
         <span className="text-sky-500">#</span>

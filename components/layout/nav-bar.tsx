@@ -31,7 +31,7 @@ function NavBar() {
     <>
       <header
         id="nav-bar"
-        className="blury max-h-14  fixed top-0 right-0 left-0  text-gray-600 font-semibold  flex items-center px-20 lg:px-10 md:px-15 sm:px-10 py-4  border-b border-gray-300  text-base"
+        className="blury max-h-14  fixed top-0 right-0 left-0  text-gray-600 font-semibold  flex items-center px-20 lg:px-10 md:px-10 sm:px-5 py-4  border-b border-gray-300  text-base"
       >
         <Link href="/">
           <Image

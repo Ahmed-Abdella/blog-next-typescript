@@ -62,7 +62,7 @@ export default function PostItem({ post }: { post: postDataType }) {
         {post.title}
       </h3>
 
-      <p className=" mt-4 text-gray-700 text-base px-4 line-3">
+      <p className=" mt-4 text-black text-base px-4 line-3">
         {`${post.excerpt}`}
       </p>
       <div className="mb-4 pt-6 mt-auto px-8 flex flex-wrap gap-2 ">

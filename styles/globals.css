@@ -60,3 +60,20 @@ a {
 .hidden-menu {
   transform: translateY(-50rem);
 }
+
+/* code {
+  font-family: inherit;
+} */
+
+.md h1 {
+  color: red;
+}
+
+.md code {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+}
+.md image {
+  width: 100%;
+  object-position: right;
+}
