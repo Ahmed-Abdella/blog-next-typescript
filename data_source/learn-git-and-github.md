@@ -6,7 +6,7 @@ excerpt: "Git is an open-source, version control tool created in 2005 by develop
 author: "Ahmed Abdella"
 tags: ["react", "next", "typescript", "tailwind"]
 
-isFeatured: true
+isFeatured: false
 ---
 
 # Learn Git and GitHub

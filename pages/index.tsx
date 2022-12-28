@@ -8,6 +8,7 @@ import { getAllPosts, getFeaturedPosts } from "../lib/posts-utils";
 import { postDataType } from "../interfaces/post-data";
 
 import { useState } from "react";
+import SearchForm from "../components/SearchForm";
 
 function Home({ posts }: { posts: postDataType[] }) {
   const [border, setBorder] = useState(false);
@@ -35,7 +36,9 @@ function Home({ posts }: { posts: postDataType[] }) {
           ></Image>
         </h1>
 
-        <form
+        <SearchForm />
+
+        {/* <form
           className={`  flex text-base font-normal  mt-6 py-1 px-4 mx-5 border-gray-400  rounded-md hover:bg-gray-100   transition duration-300 ${
             border ? "border-black border" : "border"
           } `}
@@ -69,7 +72,7 @@ function Home({ posts }: { posts: postDataType[] }) {
               />
             </svg>
           </button>
-        </form>
+        </form> */}
       </div>
 
       <FeaturedPosts posts={posts}></FeaturedPosts>

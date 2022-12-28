@@ -10,16 +10,15 @@ export function PostHeader({ post }: { post: postDataType }) {
   };
 
   return (
-    <div className=" flex flex-col gap-5 items-start border-b">
-      <h1 className="text-4xl font-semibold text-black">{post.title}</h1>
-      <div className="relative h-96 w-full   ">
+    <div className=" flex flex-col gap-5 items-start border-b ">
+      <h1 className="text-4xl font-base text-black">{post.title}</h1>
+      <div className="image-container relative md:hidden  ">
         <Image
           src={post.imageURL}
-          fill
           alt={post.title}
           loader={myLoader}
-          className="object-cover object-left "
-          unoptimized={true}
+          className={`image `}
+          fill
         />
       </div>
       <p className="text-gray-900">{post.excerpt}</p>

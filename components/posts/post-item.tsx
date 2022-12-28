@@ -51,14 +51,16 @@ export default function PostItem({ post }: { post: postDataType }) {
     <div className="h-full flex flex-col shadow-xl hover:scale-105  focus:scale-105 transition duration-300 border  rounded-3xl">
       <div className="relative h-52  width-full ">
         <Image
-          className=" object-cover rounded-t-3xl"
+          className="object-cover rounded-t-3xl"
           loader={myLoader}
           src={post.imageURL}
           alt="html code in laptop"
           fill
         ></Image>
       </div>
-      <h3 className={` font-semibold mt-4 text-black text-2xl px-8 `}>
+      <h3
+        className={` font-semibold mt-4 text-black text-2xl px-8 tracking-wide `}
+      >
         {post.title}
       </h3>
 
