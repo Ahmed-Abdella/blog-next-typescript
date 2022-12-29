@@ -78,11 +78,20 @@ export default function PostItem({ post }: { post: postDataType }) {
         ))}
       </div>
 
-      <div className=" mb-4 pt-4 mt-2">
-        <p className=" text-xs font-light text-gray-400  px-4">
-          written by:{" "}
-          <span className=" text-sm text-gray-900">{post.author}</span>
-        </p>
+      <div className="flex items-center mb-4 pt-4 mt-2 px-4">
+        <div>
+          <Image
+            alt="creator image"
+            src={post.authorImage}
+            width={30}
+            height={30}
+            className="rounded-full"
+          ></Image>
+        </div>
+        <p className=" font-light text-gray-500 text-sm ml-1">{post.author}</p>
+        <div className="ml-auto font-light text-gray-400 text-xs">
+          {post.date}
+        </div>
       </div>
     </div>
   );

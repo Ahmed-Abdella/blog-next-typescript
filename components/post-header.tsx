@@ -12,6 +12,21 @@ export function PostHeader({ post }: { post: postDataType }) {
   return (
     <div className=" flex flex-col gap-5 items-start border-b ">
       <h1 className="text-4xl font-base text-black">{post.title}</h1>
+
+      <div className="flex items-center w-full ">
+        <Link href={"/about"}>
+          <Image
+            alt="creator image"
+            src={post.authorImage}
+            width={40}
+            height={40}
+            className="rounded-full inline"
+          ></Image>
+          <p className="inline font-light text-gray-500  ml-1">{post.author}</p>
+        </Link>
+        <div className="ml-4 font-light text-gray-400 text-xs">{post.date}</div>
+      </div>
+
       <div className="image-container relative md:hidden  ">
         <Image
           src={post.imageURL}

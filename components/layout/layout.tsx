@@ -3,9 +3,9 @@ import { Fragment } from "react";
 import Footer from "./footer";
 import NavBar from "./nav-bar";
 
-import { Raleway } from "@next/font/google";
+import { Inter } from "@next/font/google";
 
-const fontFamily = Raleway({
+const fontFamily = Inter({
   weight: ["400"],
   subsets: ["latin"],
 });

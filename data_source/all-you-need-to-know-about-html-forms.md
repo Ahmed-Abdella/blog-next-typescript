@@ -4,9 +4,11 @@ date: "2022-12-10"
 imageURL: "https://images.unsplash.com/photo-1607706189992-eae578626c86?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
 excerpt: "HTML Form is a document that stores information of a user on a web server using interactive controls. An HTML form contains different kinds of information such as username, password, contact number, email id, etc."
 author: "Ahmed Abdella"
+authorImage: "/images/creators/abdella.jpg"
 tags: ["react", "next", "typescript", "tailwind"]
 
 isFeatured: true
+completed: true
 ---
 
 ## All you need to know about htm forms

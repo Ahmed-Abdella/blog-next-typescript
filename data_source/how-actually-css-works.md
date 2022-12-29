@@ -5,9 +5,11 @@ imageURL: "https://images.unsplash.com/photo-1610986603166-f78428624e76?ixlib=rb
 excerpt: "After it parses the HTML document, all it stores the code in a DOM (Document Object Model). It describes the entire web page consisting of parents, children, and siblings."
 
 author: "Ahmed Abdella"
+authorImage: "/images/creators/abdella.jpg"
 tags: ["react", "next", "typescript", "tailwind"]
 
 isFeatured: true
+completed: true
 ---
 
 # How actually css works

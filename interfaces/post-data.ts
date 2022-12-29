@@ -9,6 +9,8 @@ export interface postDataType {
   tags: string[];
   content: string;
   isFeatured: boolean;
+  completed: boolean;
+  authorImage: string;
 }
 
 export interface postMetadataType {
@@ -18,4 +20,7 @@ export interface postMetadataType {
   imageURL: string;
   author: string;
   tags: string[];
+  isFeatured: boolean;
+  completed: boolean;
+  authorImage: string;
 }
