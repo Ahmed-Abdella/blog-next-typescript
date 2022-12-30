@@ -39,10 +39,23 @@ export default function ({ post }: { post: postDataType }) {
       );
     },
 
+    a: ({ node, ...props }: any) => (
+      <a
+        className="text-sky-500 hover:text-sky-600 underline transition duration-300 decoration-sky-500 "
+        {...props}
+      ></a>
+    ),
+
     h1: ({ node, ...props }: any) => <h1 className="text-3xl" {...props}></h1>,
 
     h2({ node, ...props }: any) {
-      return <h2 className="text-2xl" {...props}></h2>;
+      return (
+        <h2 className="text-2xl text-black font-semibold " {...props}></h2>
+      );
+    },
+
+    h3({ node, ...props }: any) {
+      return <h3 className="text-xl font-semibold mt-10 " {...props}></h3>;
     },
 
     ul({ node, ordered, ...props }: any) {
@@ -132,7 +145,7 @@ export default function ({ post }: { post: postDataType }) {
     },
   };
   return (
-    <div className="min-w-full max-w-full md [&>*]:mt-6 text-slate-900 tracking-wide leading-relaxed">
+    <div className="min-w-full max-w-full md [&>*]:mb-3 text-slate-900   leading-relaxed">
       <ReactMarkdown components={components}>{post.content}</ReactMarkdown>
     </div>
   );

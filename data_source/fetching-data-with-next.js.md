@@ -11,7 +11,11 @@ isFeatured: true
 completed: true
 ---
 
-**Next.js** provides three data fetching methods and based on these methods, it renders content differently. (You can learn about different rendering methods[here](https://nextjs.org/docs/basic-features/data-fetching/overview)
+## Fetching Data In Next.js App
+
+### Fetching Data In Next.js App
+
+**Next.js** provides three data fetching methods and based on these methods, it renders content differently. (You can learn about different rendering methods [here](https://nextjs.org/docs/basic-features/data-fetching/overview)
 
 1. getStaticProps
 2. getStaticPaths
@@ -26,6 +30,8 @@ completed: true
 - It runs on every subsequent request in development mode.
 - Its code is completely excluded from the client-side bundle.
 
+### Fetching Data In Next.js App
+
 **getStaticPaths:** If a page uses getStaticProps and has dynamic routes, it must declare a list of paths that will be statically generated. Next.js will statically pre-render all the paths defined by getStaticPaths when we export a function named getStaticPaths from a page.
 
 **Properties of getStaticPaths:**
@@ -37,6 +43,8 @@ completed: true
 - It runs on every request in development mode.
 
 **getServerSideProps:** It will pre-render the page on every subsequent request. It is slower as compared to getStaticProps as the page is being rendered on every request. getServerSideProps props return JSON which will be used to render the page all this work will be handled automatically by Next.js. It could be used for calling a CMS, database, or other APIs directly from getServerSideProps. It is used to implement Server Side Rendering.
+
+### Fetching Data In Next.js App
 
 **Properties of getServerSideProps:**
 
@@ -56,6 +64,8 @@ npm install react-router-dom
 ```
 
 When we open our project in a code editor, we see a straightforward project structure. For the scope of this tutorial, we will only focus on /pages directory. We’ll first cleanup the /pages/index.js file. Then we’ll create two new pages **albums**, **posts**, and a dynamic routes page **/users/[id]**.
+
+### Fetching Data In Next.js App
 
 **Project Structure:**
 

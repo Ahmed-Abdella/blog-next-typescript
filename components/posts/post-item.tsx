@@ -83,8 +83,8 @@ export default function PostItem({ post }: { post: postDataType }) {
           <Image
             alt="creator image"
             src={post.authorImage}
-            width={30}
-            height={30}
+            width={25}
+            height={25}
             className="rounded-full"
           ></Image>
         </div>

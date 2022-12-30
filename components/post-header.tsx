@@ -10,24 +10,26 @@ export function PostHeader({ post }: { post: postDataType }) {
   };
 
   return (
-    <div className=" flex flex-col gap-5 items-start border-b ">
-      <h1 className="text-4xl font-base text-black">{post.title}</h1>
+    <div className=" flex flex-col items-start border-b ">
+      <h1 className="text-4xl font-semibold text-black">{post.title}</h1>
 
-      <div className="flex items-center w-full ">
+      <div className="flex items-center w-full mt-4">
         <Link href={"/about"}>
           <Image
             alt="creator image"
             src={post.authorImage}
-            width={40}
-            height={40}
+            width={30}
+            height={30}
             className="rounded-full inline"
           ></Image>
-          <p className="inline font-light text-gray-500  ml-1">{post.author}</p>
+          <p className="inline font-light text-gray-500 text-sm  ml-1">
+            {post.author}
+          </p>
         </Link>
         <div className="ml-4 font-light text-gray-400 text-xs">{post.date}</div>
       </div>
 
-      <div className="image-container relative md:hidden  ">
+      <div className="image-container relative md:hidden mt-3  ">
         <Image
           src={post.imageURL}
           alt={post.title}
@@ -36,9 +38,9 @@ export function PostHeader({ post }: { post: postDataType }) {
           fill
         />
       </div>
-      <p className="text-gray-900">{post.excerpt}</p>
+      <p className="text-gray-900 mt-4">{post.excerpt}</p>
 
-      <div className="mb-4   px-8 flex flex-wrap gap-2 ">
+      <div className="mb-4   px-8 flex flex-wrap gap-2 mt-6 ">
         <span className="text-sky-500">#</span>
         {post.tags.map((tag) => (
           <Link

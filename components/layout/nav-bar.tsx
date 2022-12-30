@@ -106,14 +106,14 @@ function NavBar() {
           menuIsOpen ? "md:translate-y-0" : ""
         } hidden-menu  fixed top-0  right-0 left-0 blury transition duration-500  `}
       >
-        <ul className="font-bold text-xl hover:[&>*]:[&>*]:bg-gray-200 [&>*]:[&>*]:cursor-pointer   [&>*]:[&>*]:transition [&>*]:duration:300  [&>*]:[&>*]:py-2 [&>*]:[&>*]:px-4 [&>*]:[&>*]:rounded-lg   [&>*]:mb-8  flex flex-col justify-center items-center p-10">
+        <ul className="font-bold text-lg hover:[&>*]:[&>*]:bg-gray-200 [&>*]:[&>*]:cursor-pointer   [&>*]:[&>*]:transition [&>*]:duration:300  [&>*]:[&>*]:py-2 [&>*]:[&>*]:px-4 [&>*]:[&>*]:rounded-lg    [&>*]:mb-6  flex flex-col justify-center items-center p-2">
           <li className="self-end">
             <div
               onClick={() => {
                 setmenuIsOpen(false);
               }}
             >
-              <GrClose className="cursor-pointer text-4xl " />
+              <GrClose className="cursor-pointer text-2xl " />
             </div>
           </li>
           <li onClick={() => setmenuIsOpen(false)}>

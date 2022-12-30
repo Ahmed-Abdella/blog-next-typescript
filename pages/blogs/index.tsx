@@ -15,7 +15,9 @@ function blogs({ posts }: { posts: postDataType[] }) {
 
       <div className=" flex flex-col items-center  justify-center mb-10">
         <div>
-          <h1 className="text-4xl mt-10 tracking-widest">All Articles</h1>
+          <h1 className="text-4xl mt-10 font-semibold tracking-wide">
+            All Articles
+          </h1>
         </div>
 
         <SearchForm />
