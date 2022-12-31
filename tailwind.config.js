@@ -29,6 +29,11 @@ module.exports = {
 
       xs: { max: "480px" },
     },
+
+    // colors: {
+    //   "primary-text-color": "#292929",
+    //   "secondary-text-colors": "#757575",
+    // },
     extend: {
       fontFamily: {
         sans: ["var(--font-tagwal)", ...fontFamily.sans],

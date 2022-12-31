@@ -13,7 +13,7 @@ export function PostHeader({ post }: { post: postDataType }) {
     <div className=" flex flex-col items-start border-b ">
       <h1 className="text-4xl font-semibold text-black">{post.title}</h1>
 
-      <div className="flex items-center w-full mt-4">
+      <div className="flex items-center w-full mt-6">
         <Link href={"/about"}>
           <Image
             alt="creator image"
@@ -22,7 +22,7 @@ export function PostHeader({ post }: { post: postDataType }) {
             height={30}
             className="rounded-full inline"
           ></Image>
-          <p className="inline font-light text-gray-500 text-sm  ml-1">
+          <p className="inline font-light text-gray-900 text-sm  ml-1">
             {post.author}
           </p>
         </Link>

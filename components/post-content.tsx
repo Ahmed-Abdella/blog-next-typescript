@@ -59,11 +59,11 @@ export default function ({ post }: { post: postDataType }) {
     },
 
     ul({ node, ordered, ...props }: any) {
-      return <ul className="list-disc" ordered="false" {...props}></ul>;
+      return <ul className="list-disc ml-6" ordered="false" {...props}></ul>;
     },
 
     ol({ node, ordered, ...props }: any) {
-      return <ol className="list-decimal" ordered="true" {...props}></ol>;
+      return <ol className="list-decimal ml-6" ordered="true" {...props}></ol>;
     },
 
     h4({ node, ...props }: any) {
@@ -145,7 +145,7 @@ export default function ({ post }: { post: postDataType }) {
     },
   };
   return (
-    <div className="min-w-full max-w-full md [&>*]:mb-3 text-slate-900   leading-relaxed">
+    <div className="min-w-full max-w-full md [&>*]:mb-4 text-gray-900   leading-relaxed">
       <ReactMarkdown components={components}>{post.content}</ReactMarkdown>
     </div>
   );
