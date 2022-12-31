@@ -26,7 +26,7 @@ export function readPostData(postIdentifier: string): postDataType {
     imageURL:
       "https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
     author: "N/A",
-    authorImage: "N/A",
+    authorImage: "/images/creators/abdella.jpg",
     tags: ["N/A"],
     isFeatured: false,
     content: "N/A",

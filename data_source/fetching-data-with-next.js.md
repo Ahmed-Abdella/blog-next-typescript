@@ -1,6 +1,6 @@
 ---
 title: "Data Fetching in next.js App"
-date: "2022-12-10"
+date: "Jan 1, 2023"
 imageURL: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1334&q=80"
 excerpt: "Next.js is a React-based full-stack framework that enables functionalities like pre-rendering of web pages. Unlike traditional react app where the entire app is loaded on the client, Next.js allow the web page to be rendered on the server, which is great for performance and SEO. You can learn more about Next.js"
 author: "Ahmed Abdella"
