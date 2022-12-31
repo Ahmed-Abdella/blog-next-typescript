@@ -91,3 +91,5 @@ export function getStaticProps() {
 }
 
 export default Home;
+
+// I use the page directory with next13
