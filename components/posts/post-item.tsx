@@ -71,7 +71,7 @@ export default function PostItem({ post }: { post: postDataType }) {
         {post.tags.map((tag) => (
           <div
             key={tag}
-            className=" bg-gray-200 hover:bg-gray-300 transition  duration-300 text-gray-900 rounded-xl px-2 py-0.5 text-sm"
+            className=" bg-gray-200  transition  duration-300 text-gray-900 rounded-xl px-2 py-0.5 text-sm"
           >
             {tag}
           </div>
@@ -88,7 +88,7 @@ export default function PostItem({ post }: { post: postDataType }) {
             className="rounded-full"
           ></Image>
         </div>
-        <p className=" font-light text-gray-500 text-sm ml-1">{post.author}</p>
+        <p className=" font-light text-gray-700 text-sm ml-1">{post.author}</p>
         <div className="ml-auto font-light text-gray-400 text-xs">
           {post.date}
         </div>

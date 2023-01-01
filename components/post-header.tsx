@@ -63,7 +63,7 @@ export function PostHeader({ post }: { post: postDataType }) {
           fill
         />
       </div>
-      <p className="text-gray-900 mt-4">{post.excerpt}</p>
+      <p className="text-gray-900 text-base mt-4">{post.excerpt}</p>
 
       <div className="mb-4   px-8 flex flex-wrap gap-2 mt-6 ">
         <span className="text-sky-500">#</span>

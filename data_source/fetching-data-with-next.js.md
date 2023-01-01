@@ -11,8 +11,6 @@ isFeatured: true
 completed: true
 ---
 
-## Fetching Data In Next.js App
-
 ### Fetching Data In Next.js App
 
 **Next.js** provides three data fetching methods and based on these methods, it renders content differently. (You can learn about different rendering methods [here](https://nextjs.org/docs/basic-features/data-fetching/overview)
@@ -107,3 +105,5 @@ export default Home;
 ###### that is a note taken by converting the **h4** element to div in the mark down component
 
 ![project strucure in VScode project](https://nextjs.org/static/images/learn/create-nextjs-app/welcome-to-nextjs.png "project structure")
+
+![project strucure in VScode project](https://www.digitalcitizen.life/wp-content/uploads/2020/10/png_jpg_screenshot_5.png.webp "project structure")

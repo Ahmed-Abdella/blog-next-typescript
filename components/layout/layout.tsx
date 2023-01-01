@@ -3,9 +3,9 @@ import { Fragment } from "react";
 import Footer from "./footer";
 import NavBar from "./nav-bar";
 
-import { Inter } from "@next/font/google";
+import { Inter, Lato } from "@next/font/google";
 
-const fontFamily = Inter({
+const fontFamily = Lato({
   weight: ["400"],
   subsets: ["latin"],
 });

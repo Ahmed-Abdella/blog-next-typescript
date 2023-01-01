@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-import { postDataType } from "../interfaces/post-data";
-import postType from "../interfaces/post-type";
+// import { postDataType } from "../interfaces/post-data";
+// import postType from "../interfaces/post-type";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
-export default function ({ post }: { post: postDataType }) {
+export default function ({ content }: { content: string }) {
   const components: any = {
     code({ node, inline, className, children, ...props }: any) {
       const match = /language-(\w+)/.exec(className || "");
@@ -28,16 +28,9 @@ export default function ({ post }: { post: postDataType }) {
       );
     },
 
-    image(image: any) {
-      return (
-        <Image
-          src={post.imageURL}
-          alt={image.alt}
-          width={600}
-          height={300}
-        ></Image>
-      );
-    },
+    // img(img: any) {
+    //   return <img className="shadow" alt={img.alt} src={img.src}></img>;
+    // },
 
     a: ({ node, ...props }: any) => (
       <a
@@ -46,7 +39,9 @@ export default function ({ post }: { post: postDataType }) {
       ></a>
     ),
 
-    h1: ({ node, ...props }: any) => <h1 className="text-3xl" {...props}></h1>,
+    h1: ({ node, ...props }: any) => (
+      <h1 className="text-3xl text-black" {...props}></h1>
+    ),
 
     h2({ node, ...props }: any) {
       return (
@@ -55,7 +50,12 @@ export default function ({ post }: { post: postDataType }) {
     },
 
     h3({ node, ...props }: any) {
-      return <h3 className="text-xl font-semibold mt-10 " {...props}></h3>;
+      return (
+        <h3
+          className="text-2xl text-black font-semibold mt-10 "
+          {...props}
+        ></h3>
+      );
     },
 
     ul({ node, ordered, ...props }: any) {
@@ -78,7 +78,7 @@ export default function ({ post }: { post: postDataType }) {
     h5({ node, ...props }: any) {
       return (
         <div
-          className="text-base bg-green-100 p-4 text-green-900 rounded-lg"
+          className=" bg-green-100 p-4 text-green-900 rounded-lg"
           {...props}
         ></div>
       );
@@ -131,7 +131,7 @@ export default function ({ post }: { post: postDataType }) {
               height={height}
               alt={alt}
               priority={isPriority}
-              className={`image max-h-96 object-left border p-4 bg-gray-50 `}
+              className={`image max-h-96 object-left drop-shadow-xl  `}
             />
             {hasCaption ? (
               <div className="caption" aria-label={caption}>
@@ -145,8 +145,11 @@ export default function ({ post }: { post: postDataType }) {
     },
   };
   return (
-    <div className="min-w-full max-w-full md [&>*]:mb-4 text-gray-900   leading-relaxed">
-      <ReactMarkdown components={components}>{post.content}</ReactMarkdown>
+    <div
+      className="min-w-full max-w-full md [&>*]:mb-6 text-gray-700 text-lg lg:text-base
+       leading-relaxed"
+    >
+      <ReactMarkdown components={components}>{content}</ReactMarkdown>
     </div>
   );
 }

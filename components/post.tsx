@@ -12,8 +12,8 @@ function PostDetails({ post }: { post: postDataType }) {
       <div>
         <PostHeader post={post} />
       </div>
-      <div className="max-w-full text-base   px-2 mt-2">
-        <PostContent post={post} />
+      <div className="max-w-full  px-2 mt-2">
+        <PostContent content={post.content} />
       </div>
     </div>
   );
