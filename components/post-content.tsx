@@ -1,26 +1,58 @@
 import Image from "next/image";
+
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 // import { postDataType } from "../interfaces/post-data";
 // import postType from "../interfaces/post-type";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { materialLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { FiCopy } from "react-icons/fi";
+import { MdDone } from "react-icons/md";
+import { BsTwitter } from "react-icons/Bs";
+import { useState, useEffect } from "react";
+import { clearTimeout } from "timers";
 
 export default function ({ content }: { content: string }) {
   const components: any = {
     code({ node, inline, className, children, ...props }: any) {
+      const [copied, setCopied] = useState(false);
+
+      useEffect(() => {
+        setTimeout(() => {
+          setCopied(false);
+        }, 2000);
+      }, [copied]);
+
       const match = /language-(\w+)/.exec(className || "");
       return !inline && match ? (
-        <SyntaxHighlighter
-          children={String(children).replace(/\n$/, "")}
-          style={materialLight}
-          language={match[1]}
-          PreTag="div"
-          {...props}
-          customStyle={{
-            fontSize: "0.9rem",
-          }}
-        />
+        <div className="relative ">
+          <div className="absolute flex items-center text-center top-4 right-4 z-20">
+            {copied && (
+              <p className="inline text-xs text-green-600 mr-1">Copied</p>
+            )}
+            <CopyToClipboard text={children} onCopy={() => setCopied(true)}>
+              <button
+                className={` hover:text-green-700  ${
+                  copied ? "bg-green-100 text-green-700" : ""
+                } rounded-lg text-sm p-1 transition duration-300`}
+              >
+                {copied ? <MdDone /> : <FiCopy />}
+              </button>
+            </CopyToClipboard>
+          </div>
+
+          <SyntaxHighlighter
+            children={String(children).replace(/\n$/, "")}
+            style={materialLight}
+            language={match[1]}
+            PreTag="div"
+            {...props}
+            customStyle={{
+              fontSize: "0.9rem",
+            }}
+          />
+        </div>
       ) : (
         <code className={className} {...props}>
           {children}
@@ -45,7 +77,10 @@ export default function ({ content }: { content: string }) {
 
     h2({ node, ...props }: any) {
       return (
-        <h2 className="text-2xl text-black font-semibold " {...props}></h2>
+        <h2
+          className="text-2xl md:text-xl text-black font-semibold "
+          {...props}
+        ></h2>
       );
     },
 
