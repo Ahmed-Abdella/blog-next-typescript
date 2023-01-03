@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import postType from "../../interfaces/post-type";
 import { postDataType } from "../../interfaces/post-data";
+import Tags from "../tags";
 
 // import { Roboto_Mono } from "@next/font/google";
 
@@ -48,38 +49,33 @@ export default function PostItem({ post }: { post: postDataType }) {
     return post.imageURL;
   };
   return (
-    <div className="h-full flex flex-col shadow-xl hover:scale-105  focus:scale-105 transition duration-300 border  rounded-3xl">
-      <div className="relative h-52  width-full ">
-        <Image
-          className="object-cover rounded-t-3xl"
-          loader={myLoader}
-          src={post.imageURL}
-          alt="html code in laptop"
-          fill
-        ></Image>
-      </div>
-      <h3
-        className={` font-semibold mt-4 text-black text-2xl px-8 tracking-wide `}
-      >
-        {post.title}
-      </h3>
+    <div className="h-full flex flex-col shadow-xl hover:scale-105  focus:scale-105 hover:md:transform-none transition duration-300 border  rounded-3xl">
+      <Link href={`/blogs/${post.slug}`}>
+        <div className="relative h-52  width-full ">
+          <Image
+            className="object-cover rounded-t-3xl"
+            loader={myLoader}
+            src={post.imageURL}
+            alt="html code in laptop"
+            fill
+          ></Image>
+        </div>
 
-      <p className=" mt-4 text-black text-base px-4 line-3">
-        {`${post.excerpt}`}
-      </p>
-      <div className="mb-4 pt-6 mt-auto px-8 flex flex-wrap gap-2 ">
-        {post.tags.map((tag) => (
-          <div
-            key={tag}
-            className=" bg-gray-200  transition  duration-300 text-gray-900 rounded-xl px-2 py-0.5 text-sm"
-          >
-            {tag}
-          </div>
-        ))}
-      </div>
+        <h3
+          className={` font-semibold mt-4 text-black text-2xl px-8 tracking-wide  `}
+        >
+          {post.title}
+        </h3>
 
-      <div className="flex items-center mb-4 pt-4 mt-2 px-4">
-        <div>
+        <p className=" mt-4 text-black text-base px-4 line-3">
+          {`${post.excerpt}`}
+        </p>
+      </Link>
+
+      <Tags tags={post.tags} />
+
+      <div className="flex items-center mb-4  mt-2 px-4">
+        <Link href={"/about"}>
           <Image
             alt="creator image"
             src={post.authorImage}
@@ -87,8 +83,13 @@ export default function PostItem({ post }: { post: postDataType }) {
             height={25}
             className="rounded-full"
           ></Image>
-        </div>
-        <p className=" font-light text-gray-700 text-sm ml-1">{post.author}</p>
+        </Link>
+
+        <Link href={"/about"}>
+          <p className="font-light text-gray-700 text-sm ml-1 hover:underline ">
+            {post.author}
+          </p>
+        </Link>
         <div className="ml-auto font-light text-gray-400 text-xs">
           {post.date}
         </div>

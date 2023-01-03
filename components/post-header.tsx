@@ -3,6 +3,7 @@ import postType from "../interfaces/post-type";
 
 import Link from "next/link";
 import { postDataType } from "../interfaces/post-data";
+import Tags from "./tags";
 
 // import { Lato } from "@next/font/google";
 
@@ -65,18 +66,7 @@ export function PostHeader({ post }: { post: postDataType }) {
       </div>
       <p className="text-gray-900 text-base mt-4">{post.excerpt}</p>
 
-      <div className="mb-4   px-8 flex flex-wrap gap-2 mt-6 ">
-        <span className="text-sky-500">#</span>
-        {post.tags.map((tag) => (
-          <Link
-            href={"#"}
-            key={tag}
-            className=" bg-gray-200 hover:bg-gray-300 transition  duration-300 text-gray-900 rounded-xl px-2 py-0.5 text-sm"
-          >
-            {tag}
-          </Link>
-        ))}
-      </div>
+      <Tags tags={post.tags} />
     </div>
   );
 }

@@ -19,11 +19,11 @@ export default function PostsGrid({ posts }: { posts: postDataType[] }) {
   return (
     <section>
       {/* //refactor beside the post-item */}
-      <div className="grid gap-x-5 gap-y-7   grid-cols-3 2xl:grid-cols-2 md:grid-cols-1  ">
+      <div className="grid gap-x-5 gap-y-7   grid-cols-3 2xl:grid-cols-2 md:grid-cols-1 md:px-8 sm:px-4  ">
         {posts.map((post) => (
-          <Link className="" key={post.slug} href={`/blogs/${post.slug}`}>
+          <div className="" key={post.slug}>
             <PostItem post={post} />
-          </Link>
+          </div>
         ))}
       </div>
     </section>
