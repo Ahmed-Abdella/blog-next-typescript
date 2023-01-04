@@ -30,7 +30,7 @@ a {
 }
 
 #nav-bar {
-  z-index: 4;
+  z-index: 30;
 }
 
 .blury {
@@ -73,6 +73,7 @@ a {
   -webkit-overflow-scrolling: touch;
   overflow-x: scroll;
 }
+
 .md image {
   width: 100%;
   object-position: right;

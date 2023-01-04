@@ -11,23 +11,23 @@ import { FiCopy } from "react-icons/fi";
 import { MdDone } from "react-icons/md";
 import { BsTwitter } from "react-icons/Bs";
 import { useState, useEffect } from "react";
-import { clearTimeout } from "timers";
-
 export default function ({ content }: { content: string }) {
   const components: any = {
     code({ node, inline, className, children, ...props }: any) {
       const [copied, setCopied] = useState(false);
 
       useEffect(() => {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
           setCopied(false);
         }, 2000);
+
+        return () => clearTimeout(timer);
       }, [copied]);
 
       const match = /language-(\w+)/.exec(className || "");
       return !inline && match ? (
-        <div className="relative ">
-          <div className="absolute flex items-center text-center top-4 right-4 z-20">
+        <div className="relative  ">
+          <div className="absolute flex items-center text-center top-2 right-2 z-20">
             {copied && (
               <p className="inline text-xs text-green-600 mr-1">Copied</p>
             )}
@@ -50,6 +50,7 @@ export default function ({ content }: { content: string }) {
             {...props}
             customStyle={{
               fontSize: "0.9rem",
+              padding: "2rem 1rem",
             }}
           />
         </div>
@@ -181,7 +182,7 @@ export default function ({ content }: { content: string }) {
   };
   return (
     <div
-      className="min-w-full max-w-full md [&>*]:mb-6 text-gray-700 text-lg lg:text-base
+      className="md min-w-full max-w-full  [&>*]:mb-6 text-gray-700 text-lg lg:text-base
        leading-relaxed"
     >
       <ReactMarkdown components={components}>{content}</ReactMarkdown>
