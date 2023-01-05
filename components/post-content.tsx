@@ -55,7 +55,10 @@ export default function ({ content }: { content: string }) {
           />
         </div>
       ) : (
-        <code className={className} {...props}>
+        <code
+          className={`${className} text-violet-900 bg-violet-200 px-1 rounded`}
+          {...props}
+        >
           {children}
         </code>
       );

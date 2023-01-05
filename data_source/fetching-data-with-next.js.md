@@ -19,7 +19,7 @@ completed: true
 2. getStaticPaths
 3. getServerSideProps
 
-**getStaticProps**:It preloads all of the data needed for a given page and renders pages ahead of the user’s request at build time. For speedier retrieval, all of the data is cached on a headless CMS. For better SEO performance, the page is pre-rendered and cached. If no other data fetching method is specified, Next.js will use this by default. It is used to implement Static Site Generation and Incremental Site Regeneration.
+**getStaticProps**:It preloads all of the data needed for a given page `h4` and renders pages ahead of the user’s request at build time. For speedier retrieval, all of the data is cached on a headless CMS. For better SEO performance, the page is pre-rendered and cached. If no other data fetching method is specified, Next.js will use this by default. It is used to implement Static Site Generation and Incremental Site Regeneration.
 
 **Properties of getStaticProps:**
 
@@ -98,11 +98,11 @@ const Home = () => {
 export default Home;
 ```
 
-#### that is a note taken by converting the **h4** element to div in the mark down component
+#### that is a note taken by converting the `h4` element to div in the mark down component
 
-##### that is a note taken by converting the **h4** element to div in the mark down component
+##### that is a note taken by converting the `h4` element to div in the mark down component
 
-###### that is a note taken by converting the **h4** element to div in the mark down component
+###### that is a note taken by converting the `h4` element to div in the mark down component
 
 ![project strucure in VScode project](https://nextjs.org/static/images/learn/create-nextjs-app/welcome-to-nextjs.png "project structure")
 

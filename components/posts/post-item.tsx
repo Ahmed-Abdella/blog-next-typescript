@@ -86,13 +86,11 @@ export default function PostItem({ post }: { post: postDataType }) {
         </Link>
 
         <Link href={"/about"}>
-          <p className="font-light text-gray-700 text-sm ml-1 hover:underline ">
+          <p className=" text-gray-700 text-sm ml-1 hover:underline ">
             {post.author}
           </p>
         </Link>
-        <div className="ml-auto font-light text-gray-400 text-xs">
-          {post.date}
-        </div>
+        <div className="ml-auto  text-gray-400 text-xs">{post.date}</div>
       </div>
     </div>
   );
