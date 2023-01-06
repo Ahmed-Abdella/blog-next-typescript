@@ -8,7 +8,7 @@ export default function Tags({ tags }: { tags: string[] }) {
         <Link
           href={"#"}
           key={tag}
-          className=" bg-gray-200 hover:bg-gray-300 transition  duration-300 text-gray-900 rounded-xl px-2 py-0.5 text-sm"
+          className=" bg-gray-200 hover:bg-gray-300  transition  duration-100 text-gray-900 rounded-xl px-2 py-0.5 text-sm"
         >
           {tag}
         </Link>

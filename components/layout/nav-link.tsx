@@ -11,9 +11,9 @@ function NavLink({ href, children }: navLinkValues) {
 
   return (
     <Link
-      className={`px-2 py-1 font-base hover:text-gray-900 transition duration-300 rounded-md ${
-        href === router.pathname ? "text-sky-500" : ""
-      } ${href === router.pathname ? "hover:text-sky-500" : ""}`}
+      className={`px-2 py-1 font-base hover:text-gray-900 transition duration-100 rounded-md ${
+        href === router.pathname ? "text-sky-500  hover:text-sky-500" : ""
+      } `}
       href={href}
     >
       {children}

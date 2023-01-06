@@ -73,7 +73,7 @@ function NavBar() {
       </form> */}
 
         <nav className={`ml-auto md:hidden`}>
-          <ul className="[&>*]:ml-5 [&>*]:lg:ml-2  [&>*]:transition [&>*]:duration-500  flex items-center ">
+          <ul className="[&>*]:ml-5 [&>*]:lg:ml-2    flex items-center ">
             <li>
               <NavLink href="/">Home</NavLink>
             </li>

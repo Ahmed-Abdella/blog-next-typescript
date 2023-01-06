@@ -92,7 +92,7 @@ function FeaturedPosts({ posts }: { posts: postDataType[] }) {
         <div className="mt-12  text-right mr-12">
           <Link
             href="/blogs"
-            className="text-xl  text-sky-500 hover:text-sky-600 transition duration-300 underline"
+            className="text-xl  text-sky-500 hover:text-sky-600 transition duration-100 underline"
           >
             All Articles &rarr;
           </Link>
