@@ -19,7 +19,7 @@ completed: true
 2. getStaticPaths
 3. getServerSideProps
 
-**getStaticProps**:It preloads all of the data needed for a given page `h4` and renders pages ahead of the user’s request at build time. For speedier retrieval, all of the data is cached on a headless CMS. For better SEO performance, the page is pre-rendered and cached. If no other data fetching method is specified, Next.js will use this by default. It is used to implement Static Site Generation and Incremental Site Regeneration.
+**getStaticProps**:It preloads all of the data needed for a given page `console.log("Hi There!)` and renders pages ahead of the user’s request at build time. For speedier retrieval, all of the data is cached on a headless CMS. For better SEO performance, the page is pre-rendered and cached. If no other data fetching method is specified, Next.js will use this by default. It is used to implement Static Site Generation and Incremental Site Regeneration.
 
 **Properties of getStaticProps:**
 

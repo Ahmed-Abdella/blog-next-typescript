@@ -26,7 +26,7 @@ export default function ({ content }: { content: string }) {
 
       const match = /language-(\w+)/.exec(className || "");
       return !inline && match ? (
-        <div className="relative  ">
+        <div className="relative   ">
           <div className="absolute flex items-center text-center top-2 right-2 z-20">
             {copied && (
               <p className="inline text-xs text-green-600 mr-1">Copied</p>
@@ -51,12 +51,15 @@ export default function ({ content }: { content: string }) {
             customStyle={{
               fontSize: "0.9rem",
               padding: "2rem 1rem",
+
+              border: "1px solid rgb(209 213 219)",
+              borderRadius: "8px",
             }}
           />
         </div>
       ) : (
         <code
-          className={`${className} text-violet-900 bg-violet-200 px-1 rounded`}
+          className={`${className}  text-gray-900 bg-gray-200 px-1 rounded`}
           {...props}
         >
           {children}
@@ -185,7 +188,7 @@ export default function ({ content }: { content: string }) {
   };
   return (
     <div
-      className="md min-w-full max-w-full  [&>*]:mb-6 text-gray-700 text-lg lg:text-base
+      className="md min-w-full max-w-full  [&>*]:mb-6 text-gray-900 text-lg lg:text-base
        leading-relaxed"
     >
       <ReactMarkdown components={components}>{content}</ReactMarkdown>
