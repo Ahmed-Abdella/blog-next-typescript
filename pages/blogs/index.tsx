@@ -4,8 +4,8 @@ import AllPosts from "../../components/posts/all-posts";
 import PostsGrid from "../../components/posts/posts-grid";
 import SearchForm from "../../components/SearchForm";
 import { postDataType } from "../../interfaces/post-data";
-import { getAllPosts } from "../../lib/posts-utils";
-
+import pb from "../../lib/pocketbase";
+import matter from "gray-matter";
 function blogs({ posts }: { posts: postDataType[] }) {
   return (
     <div>
@@ -15,7 +15,7 @@ function blogs({ posts }: { posts: postDataType[] }) {
 
       <div className=" flex flex-col items-center  justify-center mb-10">
         <div>
-          <h1 className="text-4xl mt-10 font-semibold tracking-wide">
+          <h1 className="text-4xl mt-2 font-semibold tracking-wide">
             All Articles
           </h1>
         </div>
@@ -28,12 +28,37 @@ function blogs({ posts }: { posts: postDataType[] }) {
   );
 }
 
-export function getStaticProps() {
-  const allPosts = getAllPosts();
+export async function getStaticProps() {
+  const allPosts = await pb
+    .collection("posts")
+    .getFullList(200 /* batch size */, {
+      sort: "-created",
+    });
+
+  const postsJSON = JSON.stringify(allPosts);
+  const posts = await JSON.parse(postsJSON);
+
+  const postsArr = posts.map((post: any) => {
+    const { data, content } = matter(post);
+    return {
+      slug: post.slug,
+
+      title: data.title,
+      date: data.date,
+      excerpt: data.excerpt,
+      imageURL: data.imageURL,
+      author: data.author,
+      authorImage: data.authorImage,
+      tags: data.tags,
+      isFeatured: data.isFeatured,
+      content,
+      completed: data.completed,
+    };
+  });
 
   return {
     props: {
-      posts: allPosts,
+      posts: postsArr,
     },
   };
 }

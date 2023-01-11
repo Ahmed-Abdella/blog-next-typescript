@@ -3,7 +3,9 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import { GetStaticPropsContext } from "next";
 
-import { getPostsFiles, readPostData } from "../../lib/posts-utils";
+import pb from "../../lib/pocketbase";
+import matter from "gray-matter";
+
 import { postDataType } from "../../interfaces/post-data";
 
 // const post = {
@@ -38,20 +40,43 @@ export async function getStaticProps(context: any) {
   const { params } = context;
   const { slug } = params;
 
-  const postData = readPostData(slug);
+  const record = await pb
+    .collection("posts")
+    .getFirstListItem(`slug="${slug}"`);
+
+  const { data, content } = matter(record.content);
+
+  const post = {
+    slug: record.slug,
+
+    title: data.title,
+    date: data.date,
+    excerpt: data.excerpt,
+    imageURL: data.imageURL,
+    author: data.author,
+    authorImage: data.authorImage,
+    tags: data.tags,
+    isFeatured: data.isFeatured,
+    content,
+    completed: data.completed,
+  };
 
   return {
     props: {
-      post: postData,
+      post: post,
     },
-    revalidate: 600,
+    revalidate: 10000000,
   };
 }
 
-export function getStaticPaths() {
-  const postFileNames = getPostsFiles();
+export async function getStaticPaths() {
+  const allPosts = await pb
+    .collection("posts")
+    .getFullList(200 /* batch size */, {
+      sort: "-created",
+    });
 
-  const slugs = postFileNames.map((fileName) => fileName.replace(/\.md$/, ""));
+  const slugs = allPosts.map((post) => post.slug);
   return {
     paths: slugs.map((slug) => ({ params: { slug: slug } })),
     fallback: false,

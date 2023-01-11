@@ -1,4 +1,5 @@
 ---
+slug: "Data-Fetching-in-next.js-App"
 title: "Data Fetching in next.js App"
 date: "Jan 1, 2023"
 imageURL: "https://images.unsplash.com/photo-1545987796-200677ee1011?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
@@ -19,7 +20,7 @@ completed: true
 2. getStaticPaths
 3. getServerSideProps
 
-**getStaticProps**:It preloads all of the data needed for a given page `console.log("Hi There!)` and renders pages ahead of the user’s request at build time. For speedier retrieval, all of the data is cached on a headless CMS. For better SEO performance, the page is pre-rendered and cached. If no other data fetching method is specified, Next.js will use this by default. It is used to implement Static Site Generation and Incremental Site Regeneration.
+`getStaticProps`:It preloads all of the data needed for a given page `console.log("Hi There!)` and renders pages ahead of the user’s request at build time. For speedier retrieval, all of the data is cached on a headless CMS. For better SEO performance, the page is pre-rendered and cached. If no other data fetching method is specified, Next.js will use this by default. It is used to implement Static Site Generation and Incremental Site Regeneration.
 
 **Properties of getStaticProps:**
 

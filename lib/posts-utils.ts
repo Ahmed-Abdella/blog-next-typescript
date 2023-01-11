@@ -1,94 +1,97 @@
-import fs from "fs";
-import path from "path";
-import { postDataType, postMetadataType } from "../interfaces/post-data";
+// import fs from "fs";
+// import path from "path";
+// import { postDataType, postMetadataType } from "../interfaces/post-data";
 
-import matter from "gray-matter";
-import postType from "../interfaces/post-type";
+// import matter from "gray-matter";
+// import postType from "../interfaces/post-type";
 
-const postsDir = path.join(process.cwd(), "data_source");
+// import pb from "./pocketbase";
 
-export function getPostsFiles() {
-  return fs.readdirSync(postsDir);
-}
+// let postsArray:any;
 
-export function readPostData(postIdentifier: string): postDataType {
-  const postSlug = postIdentifier.replace(/\.md$/, ""); //to remove file extension
-  const filePath = path.join(postsDir, `${postSlug}.md`);
-  const fileContent = fs.readFileSync(filePath, "utf-8");
-  const { data, content } = matter(fileContent);
+// const getPosts = async () => {
+//   const posts = await pb
+//     .collection("posts")
+//     .getFullList(200 /* batch size */, {
+//       sort: "-created",
+//     });
 
-  const notComletedPost = {
-    slug: postSlug,
+//    postsArray = posts
+// };
 
-    title: "not comlete",
-    date: "N/A",
-    excerpt: "not complete",
-    imageURL:
-      "https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
-    author: "N/A",
-    authorImage: "/images/creators/abdella.jpg",
-    tags: ["N/A"],
-    isFeatured: false,
-    content: "N/A",
-    completed: false,
-  };
+// const postsDir = path.join(process.cwd(), "data_source");
 
-  function isAPost(obj: any): obj is postMetadataType {
-    return (
-      "title" in obj &&
-      "date" in obj &&
-      "excerpt" in obj &&
-      "imageURL" in obj &&
-      "author" in obj &&
-      "authorImage" in obj &&
-      "tags" in obj &&
-      "isFeatured" in obj &&
-      "completed" in obj
-    );
-  }
+// export function getPostsFiles() {
+//   return fs.readdirSync(postsDir);
+// }
 
-  const postData: postDataType = isAPost(data)
-    ? {
-        slug: postSlug,
+// export function readPostData(postContent: string): postDataType {
+//   const { data, content } = matter(postContent);
+//   const postSlug: string = data.title.split(" ").join("-");
 
-        title: data.title,
-        date: data.date,
-        excerpt: data.excerpt,
-        imageURL: data.imageURL,
-        author: data.author,
-        authorImage: data.authorImage,
-        tags: data.tags,
-        isFeatured: data.isFeatured,
-        content,
-        completed: data.completed,
-      }
-    : notComletedPost;
+//   const notComletedPost = {
+//     slug: postSlug,
 
-  return postData;
-}
+//     title: "not comlete",
+//     date: "N/A",
+//     excerpt: "not complete",
+//     imageURL:
+//       "https://images.unsplash.com/photo-1531685250784-7569952593d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+//     author: "N/A",
+//     authorImage: "/images/creators/abdella.jpg",
+//     tags: ["N/A"],
+//     isFeatured: false,
+//     content: "N/A",
+//     completed: false,
+//   };
 
-export function getAllPosts() {
-  const postsFiles = getPostsFiles();
+//   function isAPost(obj: any): obj is postMetadataType {
+//     return (
+//       "title" in obj &&
+//       "date" in obj &&
+//       "excerpt" in obj &&
+//       "imageURL" in obj &&
+//       "author" in obj &&
+//       "authorImage" in obj &&
+//       "tags" in obj &&
+//       "isFeatured" in obj &&
+//       "completed" in obj
+//     );
+//   }
 
-  //   const allPosts = postsFiles.map((postFile) => {
-  //     return readPostData(postFile);
-  //   });
+//   const postData: postDataType = isAPost(data)
+//     ? {
+//         slug: postSlug,
 
-  const allPosts = postsFiles
-    .map((postFile) => {
-      return readPostData(postFile);
-    })
-    .filter((post) => post.completed);
+//         title: data.title,
+//         date: data.date,
+//         excerpt: data.excerpt,
+//         imageURL: data.imageURL,
+//         author: data.author,
+//         authorImage: data.authorImage,
+//         tags: data.tags,
+//         isFeatured: data.isFeatured,
+//         content,
+//         completed: data.completed,
+//       }
+//     : notComletedPost;
 
-  const sortedPosts = allPosts.sort((a, b) => (a.date > b.date ? -1 : 1));
+//   return postData;
+// }
 
-  return sortedPosts;
-}
+// export function getAllPosts() {
 
-export function getFeaturedPosts() {
-  const allPosts = getAllPosts();
+//   //   const allPosts = postsFiles.map((postFile) => {
+//   //     return readPostData(postFile);
+//   //   });
 
-  const featuredPosts = allPosts.filter((post) => post.isFeatured);
+//   return postsArray;
+// }
 
-  return featuredPosts;
-}
+// export function getFeaturedPosts() {
+//   const allPosts = getAllPosts();
+
+//   const featuredPosts = allPosts.filter((post) => post.isFeatured);
+
+//   return featuredPosts;
+// }
