@@ -38,6 +38,10 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-tagwal)", ...fontFamily.sans],
       },
+
+      animation: {
+        "spin-slow": "spin 2s linear infinite",
+      },
     },
   },
   plugins: [],
