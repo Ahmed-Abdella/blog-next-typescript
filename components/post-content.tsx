@@ -6,7 +6,10 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 // import postType from "../interfaces/post-type";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { materialLight } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import {
+  materialLight,
+  atomDark,
+} from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { FiCopy } from "react-icons/fi";
 import { MdDone } from "react-icons/md";
 import { BsTwitter } from "react-icons/Bs";
@@ -30,13 +33,13 @@ export default function PostContent({ content }: { content: string }) {
         <div className="relative text-sm  ">
           <div className="absolute flex items-center text-center top-2 right-2 z-20">
             {copied && (
-              <p className="inline text-xs text-green-600 mr-1">Copied</p>
+              <p className="inline text-base text-green-500 mr-1">Copied</p>
             )}
             <CopyToClipboard text={children} onCopy={() => setCopied(true)}>
               <button
-                className={` hover:text-green-700  ${
-                  copied ? "bg-green-100 text-green-700" : ""
-                } rounded-lg text-sm p-1 transition duration-300`}
+                className={`${!copied ? "text-white" : "text-green-500"}   ${
+                  copied ? "border border-green-500 " : ""
+                } rounded text-base p-0.5 transition duration-300`}
               >
                 {copied ? <MdDone /> : <FiCopy />}
               </button>
@@ -45,7 +48,7 @@ export default function PostContent({ content }: { content: string }) {
 
           <SyntaxHighlighter
             children={String(children).replace(/\n$/, "")}
-            style={materialLight}
+            style={atomDark}
             language={match[1]}
             PreTag="div"
             {...props}
