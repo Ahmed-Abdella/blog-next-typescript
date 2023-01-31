@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <Layout>
       {loading ? (
-        <div className="text-2xl  h-28 mt-28 flex justify-center items-center   ">
+        <div className="text-2xl fixed  top-14 bottom-0 right-0 left-0 blury   flex justify-center items-center   ">
           <svg
             viewBox="0 0 16 16"
             xmlns="http://www.w3.org/2000/svg"
