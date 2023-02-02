@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
-import AllPosts from "../../components/posts/all-posts";
+
 import PostsGrid from "../../components/posts/posts-grid";
 import SearchForm from "../../components/SearchForm";
 import { postDataType } from "../../interfaces/post-data";
@@ -11,6 +10,7 @@ function blogs({ posts }: { posts: postDataType[] }) {
     <div>
       <Head>
         <title>all blogs</title>
+        <link rel="icon" href="/favicon2.png" />
       </Head>
 
       <div className=" flex flex-col items-center  justify-center mb-10">

@@ -64,7 +64,7 @@ When we open our project in a code editor, we see a straightforward project stru
 
 **/pages/index.js** – We’ll first cleanup the homepage (index), delete all boilerplate code and add links to all the pages we’ll be implementing for easier Navigation.
 
-```javascript
+```jsx
 import React from "react";
 import Link from "next/link";
 const Home = () => {
@@ -89,6 +89,31 @@ const Home = () => {
 };
 
 export default Home;
+```
+
+```jsx
+function blogs({ posts }: { posts: postDataType[] }) {
+  return (
+    <div>
+      <Head>
+        <title>all blogs</title>
+        <link rel="icon" href="/favicon2.png" />
+      </Head>
+
+      <div className=" flex flex-col items-center  justify-center mb-10">
+        <div>
+          <h1 className="text-4xl mt-10 font-semibold tracking-wide">
+            All Articles
+          </h1>
+        </div>
+
+        <SearchForm />
+      </div>
+
+      <PostsGrid posts={posts} />
+    </div>
+  );
+}
 ```
 
 #### that is a note taken by converting the **h4** element to div in the mark down component

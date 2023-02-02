@@ -7,10 +7,6 @@ import Router from "next/router";
 
 import Layout from "../components/layout/layout";
 
-// export function reportWebVitals(metric: any) {
-//   console.log(metric);
-// }
-
 export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = React.useState(false);
   React.useEffect(() => {

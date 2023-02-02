@@ -3,7 +3,6 @@ import path from "path";
 import { postDataType, postMetadataType } from "../interfaces/post-data";
 
 import matter from "gray-matter";
-import postType from "../interfaces/post-type";
 
 const postsDir = path.join(process.cwd(), "data_source");
 
@@ -20,7 +19,7 @@ export function readPostData(postIdentifier: string): postDataType {
   const notComletedPost = {
     slug: postSlug,
 
-    title: "not comlete",
+    title: "not complete",
     date: "N/A",
     excerpt: "not complete",
     imageURL:
@@ -33,7 +32,7 @@ export function readPostData(postIdentifier: string): postDataType {
     completed: false,
   };
 
-  function isAPost(obj: any): obj is postMetadataType {
+  function isAPost(obj: any): boolean {
     return (
       "title" in obj &&
       "date" in obj &&
@@ -69,10 +68,6 @@ export function readPostData(postIdentifier: string): postDataType {
 
 export function getAllPosts() {
   const postsFiles = getPostsFiles();
-
-  //   const allPosts = postsFiles.map((postFile) => {
-  //     return readPostData(postFile);
-  //   });
 
   const allPosts = postsFiles
     .map((postFile) => {
