@@ -71,7 +71,7 @@ When we open our project in a code editor, we see a straightforward project stru
 
 **/pages/index.js** – We’ll first cleanup the homepage (index), delete all boilerplate code and add links to all the pages we’ll be implementing for easier Navigation.
 
-```javascript
+```jsx
 import React from "react";
 import Link from "next/link";
 const Home = () => {

@@ -9,6 +9,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
   materialLight,
   atomDark,
+  materialOceanic,
 } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { FiCopy } from "react-icons/fi";
 import { MdDone } from "react-icons/md";
@@ -48,12 +49,12 @@ export default function PostContent({ content }: { content: string }) {
 
           <SyntaxHighlighter
             children={String(children).replace(/\n$/, "")}
-            style={atomDark}
+            style={materialOceanic}
             language={match[1]}
             PreTag="div"
             {...props}
             customStyle={{
-              fontSize: "inherit",
+              fontSize: "1rem",
               padding: "2rem 1rem",
 
               border: "1px solid rgb(209 213 219)",

@@ -50,7 +50,7 @@ export default function PostItem({ post }: { post: postDataType }) {
   };
   return (
     <div className="h-full flex flex-col shadow-xl hover:scale-105  focus:scale-105 hover:md:transform-none transition duration-300 border  rounded-3xl">
-      <Link href={`/blogs/${post.slug}`}>
+      <Link href={`/blog/${post.slug}`}>
         <div className="relative h-52  width-full ">
           <Image
             className="object-cover rounded-t-3xl"
