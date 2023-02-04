@@ -5,11 +5,11 @@ import FeaturedPosts from "../components/home/featured-posts";
 
 import { getFeaturedPosts } from "../lib/posts-utils";
 
-import { postDataType } from "../interfaces/post-data";
+import { PostDataType } from "../interfaces/post-data";
 
 import SearchForm from "../components/SearchForm";
 
-function Home({ posts }: { posts: postDataType[] }) {
+function Home({ posts }: { posts: PostDataType[] }) {
   return (
     <div>
       <Head>

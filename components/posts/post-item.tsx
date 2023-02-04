@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import postType from "../../interfaces/post-type";
-import { postDataType } from "../../interfaces/post-data";
+import PostType from "../../interfaces/post-type";
+import { PostDataType } from "../../interfaces/post-data";
 import Tags from "../tags";
 
 // import { Roboto_Mono } from "@next/font/google";
 
-// interface postType {
+// interface PostType {
 //   slug: string;
 //   id: number;
 //   title: string;
@@ -44,7 +44,7 @@ import Tags from "../tags";
 //     ? Buffer.from(str).toString("base64")
 //     : window.btoa(str);
 
-export default function PostItem({ post }: { post: postDataType }) {
+export default function PostItem({ post }: { post: PostDataType }) {
   const myLoader = (): string => {
     return post.imageURL;
   };

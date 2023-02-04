@@ -1,4 +1,4 @@
-export default interface postType {
+export default interface PostType {
   slug: string;
   id: number;
   title: string;

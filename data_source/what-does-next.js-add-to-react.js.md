@@ -92,7 +92,7 @@ export default Home;
 ```
 
 ```jsx
-function blogs({ posts }: { posts: postDataType[] }) {
+function blogs({ posts }: { posts: PostDataType[] }) {
   return (
     <div>
       <Head>

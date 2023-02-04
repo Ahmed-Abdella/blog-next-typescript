@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { postDataType, postMetadataType } from "../interfaces/post-data";
+import { PostDataType, PostMetaDataType } from "../interfaces/post-data";
 
 import matter from "gray-matter";
 
@@ -10,7 +10,7 @@ export function getPostsFiles() {
   return fs.readdirSync(postsDir);
 }
 
-export function readPostData(postIdentifier: string): postDataType {
+export function readPostData(postIdentifier: string): PostDataType {
   const postSlug = postIdentifier.replace(/\.md$/, ""); //to remove file extension
   const filePath = path.join(postsDir, `${postSlug}.md`);
   const fileContent = fs.readFileSync(filePath, "utf-8");
@@ -46,7 +46,7 @@ export function readPostData(postIdentifier: string): postDataType {
     );
   }
 
-  const postData: postDataType = isAPost(data)
+  const postData: PostDataType = isAPost(data)
     ? {
         slug: postSlug,
 

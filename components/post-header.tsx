@@ -1,8 +1,8 @@
 import Image from "next/image";
-import postType from "../interfaces/post-type";
+import PostType from "../interfaces/post-type";
 
 import Link from "next/link";
-import { postDataType } from "../interfaces/post-data";
+import { PostDataType } from "../interfaces/post-data";
 import Tags from "./tags";
 
 // import { Lato } from "@next/font/google";
@@ -12,7 +12,7 @@ import Tags from "./tags";
 //   subsets: ["latin"],
 // });
 
-export function PostHeader({ post }: { post: postDataType }) {
+export function PostHeader({ post }: { post: PostDataType }) {
   const myLoader = (): string => {
     return post.imageURL;
   };

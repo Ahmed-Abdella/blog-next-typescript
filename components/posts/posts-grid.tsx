@@ -1,11 +1,11 @@
 import Link from "next/link";
 import React from "react";
 import PostItem from "./post-item";
-import postType from "../../interfaces/post-type";
+import PostType from "../../interfaces/post-type";
 
-import { postDataType } from "../../interfaces/post-data";
+import { PostDataType } from "../../interfaces/post-data";
 
-// interface postType {
+// interface PostType {
 //   id: number;
 //   slug: string;
 //   title: string;
@@ -15,7 +15,7 @@ import { postDataType } from "../../interfaces/post-data";
 //   tags: string[];
 // }
 
-export default function PostsGrid({ posts }: { posts: postDataType[] }) {
+export default function PostsGrid({ posts }: { posts: PostDataType[] }) {
   return (
     <section>
       {/* //refactor beside the post-item */}

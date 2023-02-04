@@ -1,4 +1,4 @@
-export interface postDataType {
+export interface PostDataType {
   slug: string;
 
   title: string;
@@ -13,7 +13,7 @@ export interface postDataType {
   authorImage: string;
 }
 
-export interface postMetadataType {
+export interface PostMetaDataType {
   title: string;
   date: string;
   excerpt: string;

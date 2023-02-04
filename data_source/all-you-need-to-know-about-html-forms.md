@@ -32,7 +32,7 @@ completed: true
 
 ```javascript
 
-export default function ({ post }: { post: postDataType }) {
+export default function ({ post }: { post: PostDataType }) {
   const components: any = {
     code({ node, inline, className, children, ...props }: any) {
       const match = /language-(\w+)/.exec(className || "");

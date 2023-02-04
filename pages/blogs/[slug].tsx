@@ -3,9 +3,9 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 
 import { getPostsFiles, readPostData } from "../../lib/posts-utils";
-import { postDataType } from "../../interfaces/post-data";
+import { PostDataType } from "../../interfaces/post-data";
 
-export default function Post({ post }: { post: postDataType }) {
+export default function Post({ post }: { post: PostDataType }) {
   const router = useRouter();
   console.log(router.query.slug);
   return (

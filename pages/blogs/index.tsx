@@ -2,10 +2,10 @@ import Head from "next/head";
 
 import PostsGrid from "../../components/posts/posts-grid";
 import SearchForm from "../../components/SearchForm";
-import { postDataType } from "../../interfaces/post-data";
+import { PostDataType } from "../../interfaces/post-data";
 import { getAllPosts } from "../../lib/posts-utils";
 
-function blogs({ posts }: { posts: postDataType[] }) {
+function blogs({ posts }: { posts: PostDataType[] }) {
   return (
     <div>
       <Head>

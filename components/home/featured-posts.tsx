@@ -2,7 +2,7 @@ import Link from "next/link";
 import PostsGrid from "../posts/posts-grid";
 
 // import { getFeaturedPosts } from "../../lib/posts-utils";
-import { postDataType } from "../../interfaces/post-data";
+import { PostDataType } from "../../interfaces/post-data";
 
 const featuredPosts = [
   {
@@ -80,7 +80,7 @@ const featuredPosts = [
   },
 ];
 
-function FeaturedPosts({ posts }: { posts: postDataType[] }) {
+function FeaturedPosts({ posts }: { posts: PostDataType[] }) {
   return (
     <>
       <div className="mt-16">

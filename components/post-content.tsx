@@ -2,8 +2,8 @@ import Image from "next/image";
 
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-// import { postDataType } from "../interfaces/post-data";
-// import postType from "../interfaces/post-type";
+// import { PostDataType } from "../interfaces/post-data";
+// import PostType from "../interfaces/post-type";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import {
