@@ -9,14 +9,14 @@ export default function PostItem({ post }: { post: PostDataType }) {
     return post.imageURL;
   };
   return (
-    <div className="h-full flex flex-col shadow-xl hover:-translate-y-4  focus:scale-105 hover:md:transform-none transition duration-300 border  rounded-3xl">
+    <div className="h-full flex flex-col  hover:shadow-xl  focus:shadow-xl hover:md:transform-none transition duration-300 border border-gray-300  rounded-3xl">
       <Link href={`/blog/${post.slug}`}>
         <div className="relative h-52  width-full ">
           <Image
             className="object-cover rounded-t-3xl"
             loader={myLoader}
             src={post.imageURL}
-            alt="html code in laptop"
+            alt="development image unsplash"
             fill
           ></Image>
         </div>

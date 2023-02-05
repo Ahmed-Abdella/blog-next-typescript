@@ -32,8 +32,6 @@ function Home({ posts }: { posts: PostDataType[] }) {
             className="bg-gray-200 mb-1 p-2 rounded-full inline-block ml-2 "
           ></Image>
         </h1>
-
-        <SearchForm />
       </div>
 
       <FeaturedPosts posts={posts}></FeaturedPosts>
