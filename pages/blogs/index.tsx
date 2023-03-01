@@ -32,7 +32,10 @@ function blogs({ allPosts }: { allPosts: PostDataType[] }) {
           </h1>
         </div>
 
-        <SearchForm setValue={setSearchValue} value={searchValue} />
+        <SearchForm
+          setValue={(value: string) => setSearchValue(value)}
+          value={searchValue}
+        />
       </div>
 
       <PostsGrid posts={posts} />
