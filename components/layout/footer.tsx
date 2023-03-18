@@ -33,11 +33,6 @@ export default function Footer() {
               <BsTwitter />
             </a>
           </li>
-          {/* <li>
-            <a href="#">
-              <BsLinkedin />
-            </a>
-          </li> */}
         </ul>
 
         <p className="mt-6 text-xs font-light">

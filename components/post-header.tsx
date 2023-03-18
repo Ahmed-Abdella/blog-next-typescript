@@ -1,5 +1,4 @@
 import Image from "next/image";
-import PostType from "../interfaces/post-type";
 
 import Link from "next/link";
 import { PostDataType } from "../interfaces/post-data";
