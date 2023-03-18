@@ -37,8 +37,8 @@ export async function getStaticProps(context: any) {
   const { slug } = params;
 
   try {
-    const response = await fetch(`http://api.wetalkdev.com/blog/${slug}`, {
-      method: "POST",
+    const response = await fetch(`https://api.wetalkdev.com/blog/${slug}`, {
+      method: "GET",
 
       headers: {
         "Content-Type": "application/json",
