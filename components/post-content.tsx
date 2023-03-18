@@ -2,18 +2,12 @@ import Image from "next/image";
 
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-// import { PostDataType } from "../interfaces/post-data";
-// import PostType from "../interfaces/post-type";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import {
-  materialLight,
-  atomDark,
-  materialOceanic,
-} from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { materialOceanic } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { FiCopy } from "react-icons/fi";
 import { MdDone } from "react-icons/md";
-import { BsTwitter } from "react-icons/Bs";
+
 import { useState, useEffect } from "react";
 
 export default function PostContent({ content }: { content: string }) {

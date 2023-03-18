@@ -1,8 +1,5 @@
-import Image from "next/image";
-import { useRouter } from "next/router";
 import { PostDataType } from "../interfaces/post-data";
 
-import PostType from "../interfaces/post-type";
 import PostContent from "./post-content";
 import { PostHeader } from "./post-header";
 

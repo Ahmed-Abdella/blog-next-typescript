@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BsTwitter } from "react-icons/Bs";
-import { BsLinkedin } from "react-icons/Bs";
 
 export default function Footer() {
   return (
@@ -42,7 +41,7 @@ export default function Footer() {
         </ul>
 
         <p className="mt-6 text-xs font-light">
-          Copyright &copy; 2023 Ahmed Abdella
+          Copyright &copy; 2023 Wetalkdev
         </p>
       </div>
     </footer>

@@ -42,44 +42,12 @@ function NavBar() {
           ></Image>
         </Link>
 
-        {/* <form className=" bg-gray-100 flex text-base font-normal shadow  ml-20 py-1 px-4 border-gray-400 border rounded-md">
-        <div>
-          <label htmlFor="search"></label>
-
-          <input
-            id="search"
-            type="text"
-            className="bg-gray-100  w-80 outline-none"
-            placeholder="search..."
-          />
-        </div>
-
-        <button className="ml-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-            />
-          </svg>
-        </button>
-      </form> */}
-
         <nav className={`ml-auto md:hidden`}>
           <ul className="[&>*]:ml-5 [&>*]:lg:ml-2    flex items-center ">
             <li>
               <NavLink href="/">Home</NavLink>
             </li>
-            <li>
-              <NavLink href="/blogs">Blogs</NavLink>
-            </li>
+
             <li>
               <NavLink href="/about">About</NavLink>
             </li>

@@ -2,21 +2,32 @@ import PostDetails from "../../components/post";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
-import { getPostsFiles, readPostData } from "../../lib/posts-utils";
 import { PostDataType } from "../../interfaces/post-data";
 
-export default function Post({ post }: { post: PostDataType }) {
+export default function Post({
+  post,
+  notFound,
+}: {
+  post: PostDataType;
+  notFound: boolean;
+}) {
   const router = useRouter();
   console.log(router.query.slug);
+
   return (
     <div>
-      <Head>
-        <title>{post.title}</title>
-        <meta name="description" content={post.title} />
-        <link rel="icon" href="/favicon2.png" />
-      </Head>
+      {post && (
+        <>
+          <Head>
+            <title>{post.title}</title>
+            <meta name="description" content={post.title} />
+            <link rel="icon" href="/favicon2.png" />
+          </Head>
+          <PostDetails post={post} />
+        </>
+      )}
 
-      <PostDetails post={post} />
+      {notFound && <p className="bg-red-300 px-2 py-1">Can't get the blog</p>}
     </div>
   );
 }
@@ -25,22 +36,56 @@ export async function getStaticProps(context: any) {
   const { params } = context;
   const { slug } = params;
 
-  const postData = readPostData(slug);
+  try {
+    const response = await fetch(`http://api.wetalkdev.com/blog/${slug}`, {
+      method: "POST",
 
-  return {
-    props: {
-      post: postData,
-    },
-    revalidate: 600,
-  };
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const postData = await response.json();
+
+    return {
+      props: {
+        post: postData,
+      },
+      revalidate: 600, // 10 minutes
+    };
+  } catch (error) {
+    if (error instanceof Error) {
+      return {
+        props: {
+          notFound: true,
+          errorMessage: error.message,
+        },
+      };
+    }
+  }
 }
 
-export function getStaticPaths() {
-  const postFileNames = getPostsFiles();
+export async function getStaticPaths() {
+  try {
+    const response = await fetch("https://api.wetalkdev.com/blog/search", {
+      method: "POST",
 
-  const slugs = postFileNames.map((fileName) => fileName.replace(/\.md$/, ""));
-  return {
-    paths: slugs.map((slug) => ({ params: { slug: slug } })),
-    fallback: false,
-  };
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const result = await response.json();
+
+    const slugs = result.data.map((blogObj: any) => blogObj.slug);
+    return {
+      paths: slugs.map((slug: string) => ({ params: { slug: slug } })),
+      fallback: false,
+    };
+  } catch (error) {
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
 }

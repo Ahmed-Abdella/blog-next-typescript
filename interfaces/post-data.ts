@@ -1,6 +1,6 @@
 export interface PostDataType {
+  _id: string;
   slug: string;
-
   title: string;
   date: string;
   excerpt: string;
@@ -8,19 +8,17 @@ export interface PostDataType {
   author: string;
   tags: string[];
   content: string;
-  isFeatured: boolean;
-  completed: boolean;
   authorImage: string;
 }
 
-export interface PostMetaDataType {
-  title: string;
-  date: string;
-  excerpt: string;
-  imageURL: string;
-  author: string;
-  tags: string[];
-  isFeatured: boolean;
-  completed: boolean;
-  authorImage: string;
-}
+// export interface PostMetaDataType {
+//   title: string;
+//   date: string;
+//   excerpt: string;
+//   imageURL: string;
+//   author: string;
+//   tags: string[];
+//   isFeatured: boolean;
+//   completed: boolean;
+//   authorImage: string;
+// }
