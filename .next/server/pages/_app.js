@@ -4,7 +4,7 @@ exports.id = 888;
 exports.ids = [888];
 exports.modules = {
 
-/***/ 3480:
+/***/ 8513:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -32,13 +32,11 @@ var image_default = /*#__PURE__*/__webpack_require__.n(next_image);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
-;// CONCATENATED MODULE: external "react-icons/Bs"
-const Bs_namespaceObject = require("react-icons/Bs");
 ;// CONCATENATED MODULE: ./components/layout/footer.tsx
 
 
 
-
+// import { BsTwitter } from "react-icons/Bs";
 function Footer() {
     return /*#__PURE__*/ jsx_runtime_.jsx("footer", {
         className: " mx-20 md:mx-5 mt-20 p-20 md:p-5 text-gray-500 text-sm font-semibold border-t",
@@ -77,15 +75,6 @@ function Footer() {
                         })
                     ]
                 }),
-                /*#__PURE__*/ jsx_runtime_.jsx("ul", {
-                    className: "flex gap-3 mt-4 text-lg [&>*]:transition [&>*]:duration-300 hover:[&>*]:text-black",
-                    children: /*#__PURE__*/ jsx_runtime_.jsx("li", {
-                        children: /*#__PURE__*/ jsx_runtime_.jsx("a", {
-                            href: "#",
-                            children: /*#__PURE__*/ jsx_runtime_.jsx(Bs_namespaceObject.BsTwitter, {})
-                        })
-                    })
-                }),
                 /*#__PURE__*/ jsx_runtime_.jsx("p", {
                     className: "mt-6 text-xs font-light",
                     children: "Copyright \xa9 2023 Wetalkdev"
@@ -120,7 +109,7 @@ const gr_namespaceObject = require("react-icons/gr");
 
 
 
-
+// import { BsTwitter } from "react-icons/Bs";
 
 
 function NavBar() {
@@ -173,10 +162,6 @@ function NavBar() {
                                         href: "/contact",
                                         children: "Contact"
                                     })
-                                }),
-                                /*#__PURE__*/ jsx_runtime_.jsx("li", {
-                                    className: "border-l border-gray-400 pl-4 py-0.5",
-                                    children: /*#__PURE__*/ jsx_runtime_.jsx(Bs_namespaceObject.BsTwitter, {})
                                 })
                             ]
                         })
@@ -231,12 +216,6 @@ function NavBar() {
                             children: /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                 href: "/contact",
                                 children: "Contact"
-                            })
-                        }),
-                        /*#__PURE__*/ jsx_runtime_.jsx("li", {
-                            onClick: ()=>setmenuIsOpen(false),
-                            children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                                children: /*#__PURE__*/ jsx_runtime_.jsx(Bs_namespaceObject.BsTwitter, {})
                             })
                         })
                     ]
@@ -663,7 +642,7 @@ module.exports = require("react/jsx-runtime");
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [121,676,61], () => (__webpack_exec__(3480)));
+var __webpack_exports__ = __webpack_require__.X(0, [121,676,61], () => (__webpack_exec__(8513)));
 module.exports = __webpack_exports__;
 
 })();

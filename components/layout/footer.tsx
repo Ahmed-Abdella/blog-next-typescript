@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BsTwitter } from "react-icons/Bs";
+// import { BsTwitter } from "react-icons/Bs";
 
 export default function Footer() {
   return (
@@ -27,13 +27,13 @@ export default function Footer() {
           </li>
         </ul>
 
-        <ul className="flex gap-3 mt-4 text-lg [&>*]:transition [&>*]:duration-300 hover:[&>*]:text-black">
+        {/* <ul className="flex gap-3 mt-4 text-lg [&>*]:transition [&>*]:duration-300 hover:[&>*]:text-black">
           <li>
             <a href="#">
               <BsTwitter />
             </a>
           </li>
-        </ul>
+        </ul> */}
 
         <p className="mt-6 text-xs font-light">
           Copyright &copy; 2023 Wetalkdev

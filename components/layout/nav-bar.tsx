@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import NavLink from "./nav-link";
-import { BsTwitter } from "react-icons/Bs";
+// import { BsTwitter } from "react-icons/Bs";
 import { FiMenu } from "react-icons/fi";
 import { GrClose } from "react-icons/gr";
 
@@ -54,9 +54,9 @@ function NavBar() {
             <li>
               <NavLink href="/contact">Contact</NavLink>
             </li>
-            <li className="border-l border-gray-400 pl-4 py-0.5">
+            {/* <li className="border-l border-gray-400 pl-4 py-0.5">
               <BsTwitter />
-            </li>
+            </li> */}
           </ul>
         </nav>
 
@@ -96,11 +96,11 @@ function NavBar() {
           <li onClick={() => setmenuIsOpen(false)}>
             <Link href="/contact">Contact</Link>
           </li>
-          <li onClick={() => setmenuIsOpen(false)}>
+          {/* <li onClick={() => setmenuIsOpen(false)}>
             <div>
               <BsTwitter />
             </div>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>
