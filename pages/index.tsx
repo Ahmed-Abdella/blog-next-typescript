@@ -32,21 +32,27 @@ function blogs({
     );
   }
 
-  console.log(searchValue);
-  console.log(posts);
+  // console.log(searchValue);
+  // console.log(posts);
 
   return (
     <>
       {posts && (
         <div>
           <Head>
-            <title>Dev Blogs</title>
+            <title>
+              We Talk Dev - Tips, Tricks, and Insights for Developers
+            </title>
+            <meta
+              name="description"
+              content="Tips, Tricks, and Insights for Developers"
+            />
             <link rel="icon" href="/favicon2.png" />
           </Head>
           <div className=" flex flex-col items-center  justify-center mb-10">
             <div className=" flex flex-col items-center  justify-center">
-              <h1 className=" text-3xl md:text-2xl text-black text-center  font-semibold">
-                We Talk About Software & Web Development
+              <h1 className=" text-4xl md:text-2xl text-black text-center  font-semibold">
+                Tips, Tricks, and Insights for Developers
                 <Image
                   src={"/icon.svg"}
                   alt="the logo icon"
@@ -101,7 +107,7 @@ export async function getStaticProps() {
       props: {
         allPosts: result.data,
       },
-      revalidate: 600, // 10 minutes
+      revalidate: 600, // 10 minutesّ
     };
   } catch (error) {
     if (error instanceof Error) {
