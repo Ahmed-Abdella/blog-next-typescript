@@ -21,7 +21,7 @@ export default function Post({
           <Head>
             <title>{post.title}</title>
             <meta name="description" content={post.excerpt} />
-            <link rel="icon" href="/favicon2.png" />
+            <link rel="icon" href="/favicon.ico" />
           </Head>
           <PostDetails post={post} />
         </>

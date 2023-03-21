@@ -47,11 +47,11 @@ function blogs({
               name="description"
               content="Tips, Tricks, and Insights for Developers"
             />
-            <link rel="icon" href="/favicon2.png" />
+            <link rel="icon" href="/favicon.ico" />
           </Head>
           <div className=" flex flex-col items-center  justify-center mb-10">
             <div className=" flex flex-col items-center  justify-center">
-              <h1 className=" text-4xl md:text-2xl text-black text-center  font-semibold">
+              <h1 className=" text-4xl md:text-3xl text-black text-center  font-semibold">
                 Tips, Tricks, and Insights for Developers
                 <Image
                   src={"/icon.svg"}
@@ -61,6 +61,7 @@ function blogs({
                   className="bg-gray-200 mb-1 p-2 rounded-full inline-block ml-2 "
                 ></Image>
               </h1>
+              <p>We Provide Articles About Software and Web Development</p>
             </div>
 
             <SearchForm
