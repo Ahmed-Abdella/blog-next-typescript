@@ -37,8 +37,8 @@ function NavBar() {
           <Image
             src={"/logo2.svg"}
             alt="the website logo"
-            width={150}
-            height={150}
+            width={160}
+            height={160}
           ></Image>
         </Link>
 

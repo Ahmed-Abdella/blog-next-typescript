@@ -32,9 +32,9 @@ export function PostHeader({ post }: { post: PostDataType }) {
         </Link>
 
         <div className="self-center  ">
-          <Link href={"/about"}>
+          <a href={`/about/#${post.author.split(" ").join("-")}`}>
             <p className=" text-black  hover:underline ">{post.author}</p>
-          </Link>
+          </a>
 
           <div className="  text-gray-500 text-sm">{post.date}</div>
         </div>

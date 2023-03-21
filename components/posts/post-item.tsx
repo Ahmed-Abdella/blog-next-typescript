@@ -45,11 +45,11 @@ export default function PostItem({ post }: { post: PostDataType }) {
           ></Image>
         </Link>
 
-        <Link href={"/about"}>
+        <a href={`/about/#${post.author.split(" ").join("-")}`}>
           <p className=" text-gray-700 text-sm ml-1 hover:underline ">
             {post.author}
           </p>
-        </Link>
+        </a>
         <div className="ml-auto  text-gray-400 text-xs">{post.date}</div>
       </div>
     </div>
