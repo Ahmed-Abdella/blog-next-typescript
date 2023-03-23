@@ -9,7 +9,7 @@ function about() {
   return (
     <div>
       <Head>
-        <title>about us</title>
+        <title>We Talk Dev - About</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

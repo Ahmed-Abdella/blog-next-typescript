@@ -23,7 +23,7 @@ export default function Footer() {
             <Link href="/contact">Contact</Link>
           </li>
           <li>
-            <Link href="/terms-and-conditions">Terms&Conditions</Link>
+            <Link href="/terms-and-conditions">Terms & Conditions</Link>
           </li>
         </ul>
 

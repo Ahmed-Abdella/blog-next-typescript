@@ -61,7 +61,9 @@ function blogs({
                   className="bg-gray-200 mb-1 p-2 rounded-full inline-block ml-2 "
                 ></Image>
               </h1>
-              <p>We Provide Articles About Software and Web Development</p>
+              <h2 className="text-lg">
+                We Provide Articles About Software and Web Development
+              </h2>
             </div>
 
             <SearchForm
