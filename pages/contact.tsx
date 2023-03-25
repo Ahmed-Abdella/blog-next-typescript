@@ -48,8 +48,8 @@ function contact() {
               {" "}
               Abdella Twitter
             </a> */}
-            If you spot outdated information in any of our articles, send one of
-            us a link and we will make sure to update the article ASAP.
+            If you noticed any outdated information in any of our articles, send
+            one of us a link and we will make sure to update the article ASAP.
           </p>
         </div>
 
