@@ -70,7 +70,7 @@ function Footer() {
                         /*#__PURE__*/ jsx_runtime_.jsx("li", {
                             children: /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
                                 href: "/terms-and-conditions",
-                                children: "Terms&Conditions"
+                                children: "Terms & Conditions"
                             })
                         })
                     ]

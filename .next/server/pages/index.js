@@ -260,7 +260,8 @@ function blogs({ allPosts , notFound , errorMessage  }) {
                                             })
                                         ]
                                     }),
-                                    /*#__PURE__*/ jsx_runtime_.jsx("p", {
+                                    /*#__PURE__*/ jsx_runtime_.jsx("h2", {
+                                        className: "text-lg",
                                         children: "We Provide Articles About Software and Web Development"
                                     })
                                 ]
